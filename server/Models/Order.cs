@@ -1,7 +1,9 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-
+namespace server.Models
+{
 public class Order
+
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
@@ -25,4 +27,5 @@ public class Order
 
     [BsonElement("status")]
     public int Status { get; set; }
+}
 }

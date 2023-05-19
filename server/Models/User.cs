@@ -1,6 +1,6 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-
+namespace server.Models{
 public class User
 {
     [BsonId]
@@ -27,4 +27,5 @@ public class User
 
     [BsonElement("roles")]
     public string[] Roles { get; set; } = new string[] { "ROLE_USER" };
+}
 }

@@ -1,6 +1,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-
+namespace server.Models
+{
 public class OrderDetail
 {
     [BsonId]
@@ -17,4 +18,6 @@ public class OrderDetail
 
     [BsonElement("quantity")]
     public int Quantity { get; set; }
+
+}
 }
