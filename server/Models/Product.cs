@@ -1,32 +1,38 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System.Collections.Generic;
 
-namespace server.Models
+public class Product
 {
-    public class Product
-    {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+    [BsonId]
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string Id { get; set; }
 
-        [BsonElement("name")]
-        public string Name { get; set; }
+    [BsonElement("category")]
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string CategoryId { get; set; }
 
-        [BsonElement("brand")]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Brand { get; set; } 
+    [BsonElement("name")]
+    public string Name { get; set; }
 
-        [BsonElement("price")]
-        public decimal Price { get; set; }
+    [BsonElement("brand")]
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string BrandId { get; set; }
 
-        [BsonElement("description")]
-        public string Description { get; set; }
+    [BsonElement("price")]
+    public decimal Price { get; set; }
 
-        [BsonElement("colors")]
-        public List<string> Colors { get; set; }
+    [BsonElement("stock")]
+    public int Stock { get; set; }
 
-        [BsonElement("specs")]
-        public List<string> Specs { get; set; }
-    }
+    [BsonElement("image")]
+    public string[] Image { get; set; }
+
+    [BsonElement("colors")]
+    public string[] Colors { get; set; }
+
+    [BsonElement("models")]
+    public string[] Models { get; set; }
+
+    [BsonElement("description")]
+    public string Description { get; set; }
 }
