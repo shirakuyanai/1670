@@ -20,11 +20,10 @@ namespace server.Controllers
           
         [Route("products")]
         [HttpGet]
-        public IActionResult GetProduct()
+        public IActionResult ViewAllProducts()
         {
-            var filter = Builders<Product>.Filter.Empty; // Empty filter to fetch all documents
-            var products = product_collection.Find(filter).ToList();
-            return Json(products);
+            var products = product_collection.Find(Builders<Product>.Filter.Empty).ToList();
+            return Ok(products);
         }
        
         [Route("product/create")]
@@ -32,64 +31,56 @@ namespace server.Controllers
         public IActionResult CreateProduct([FromBody] Product product)
         {
             product_collection.InsertOne(product);
-            return Json(product);
+            return Ok(product);
         }
 
         [Route("product/delete/{id}")]
         [HttpDelete]
         public IActionResult DeleteProduct(string id)
         {
-            ObjectId objectId;
-            if (!ObjectId.TryParse(id, out objectId))
+            var filter = Builders<Product>.Filter.Eq(p => p.Id, id);
+            var result = product_collection.DeleteOne(filter);
+            if (result.DeletedCount > 0)
             {
-                return BadRequest("Invalid id format");
+                return Ok("Product deleted successfully.");
             }
-            
-            var filter = Builders<Product>.Filter.Eq("_id", objectId);
-            Product product = product_collection.Find(filter).Limit(1).FirstOrDefault();
-            product_collection.DeleteOne(filter);
-            return Json(product);
+            else
+            {
+                return NotFound("Product not found.");
+            }
         }
 
         [Route("product/view/{id}")]
         [HttpGet]
         public IActionResult GetProduct(string id)
         {
-            ObjectId objectId;
-            if (!ObjectId.TryParse(id, out objectId))
+            var filter = Builders<Product>.Filter.Eq(p => p.Id, id);
+            var product = product_collection.Find(filter).FirstOrDefault();
+            if (product != null)
             {
-                return BadRequest("Invalid id format");
+                return Ok(product);
             }
-            
-            var filter = Builders<Product>.Filter.Eq("_id", objectId);
-            Product product = product_collection.Find(filter).Limit(1).FirstOrDefault();
-            return Json(product);
+            else
+            {
+                return NotFound("Product not found.");
+            }
         }
 
         [Route("product/edit/{id}")]
         [HttpPut]
-        public IActionResult UpdateProduct(string id, [FromBody] Product newProduct)
+        public IActionResult UpdateProduct(string id, [FromBody] Product updatedProduct)
         {
-            ObjectId objectId;
-            if (!ObjectId.TryParse(id, out objectId))
+            updatedProduct.Id = id;
+            var filter = Builders<Product>.Filter.Eq(p => p.Id, id);
+            var result = product_collection.ReplaceOne(filter, updatedProduct);
+            
+            if (result.ModifiedCount > 0)
             {
-                return BadRequest("Invalid id format");
-            }
-
-            var filter = Builders<Product>.Filter.Eq("_id", objectId);
-            Product existingProduct = product_collection.Find(filter).FirstOrDefault();
-
-            if (existingProduct != null)
-            {
-                existingProduct.Name = newProduct.Name;
-
-                product_collection.ReplaceOne(filter, existingProduct);
-
-                return Json(existingProduct);
+                return Ok(updatedProduct);
             }
             else
             {
-                return NotFound();
+                return NotFound("Product not found.");
             }
         }
     }

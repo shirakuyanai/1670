@@ -27,5 +27,7 @@ public class Order
 
     [BsonElement("status")]
     public int Status { get; set; }
+    [BsonElement("__v")]
+        public int Version { get; set; } = 0;
 }
 }

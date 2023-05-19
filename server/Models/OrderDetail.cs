@@ -18,6 +18,7 @@ public class OrderDetail
 
     [BsonElement("quantity")]
     public int Quantity { get; set; }
-
+    [BsonElement("__v")]
+        public int Version { get; set; } = 0;
 }
 }

@@ -27,5 +27,7 @@ public class User
 
     [BsonElement("roles")]
     public string[] Roles { get; set; } = new string[] { "ROLE_USER" };
+    [BsonElement("__v")]
+        public int Version { get; set; } = 0;
 }
 }
