@@ -1,38 +1,47 @@
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
-namespace server.Models{
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace server.Models
+{
     public class Product
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        [Key]
+        public int Pid { get; set; }
 
-        [BsonElement("name")]
+        [Required]
+        [ForeignKey("Brand")]
+        public int Bid { get; set; }
+        public Brand Brand { get; set; }
+
+
+        [Required]
+        [StringLength(100)]
         public string Name { get; set; }
 
-        [BsonElement("brand")]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string BrandId { get; set; }
+        [Range(0, double.MaxValue)]
+        public double Price { get; set; }
 
-        [BsonElement("price")]
-        public decimal Price { get; set; }
-
-        [BsonElement("stock")]
+        [Range(0, int.MaxValue)]
         public int Stock { get; set; }
 
-        [BsonElement("image")]
+        [StringLength(300)]
         public string Image { get; set; }
 
-        [BsonElement("color")]
+        [StringLength(50)]
         public string Color { get; set; }
 
-        [BsonElement("model")]
+        [StringLength(100)]
+        public string Gift { get; set; }
+
+        [StringLength(100)]
         public string Model { get; set; }
 
-        [BsonElement("description")]
+        [StringLength(20)]
+        public string Warranty { get; set; }
+
+        [StringLength(500)]
         public string Description { get; set; }
 
-        [BsonElement("__v")]
-        public int Version { get; set; } = 0;
+
     }
 }
