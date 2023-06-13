@@ -22,9 +22,8 @@ namespace server.Controllers
         // GET: Products
         public async Task<IActionResult> Index()
         {
-              return _context.Product != null ? 
-                          View(await _context.Product.ToListAsync()) :
-                          Problem("Entity set 'serverContext.Product'  is null.");
+            var serverContext = _context.Product.Include(p => p.Brand);
+            return View(await serverContext.ToListAsync());
         }
 
         // GET: Products/Details/5
@@ -36,6 +35,7 @@ namespace server.Controllers
             }
 
             var product = await _context.Product
+                .Include(p => p.Brand)
                 .FirstOrDefaultAsync(m => m.Pid == id);
             if (product == null)
             {
@@ -48,6 +48,7 @@ namespace server.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
+            ViewData["Bid"] = new SelectList(_context.Brand, "Bid", "Bid");
             return View();
         }
 
@@ -64,6 +65,7 @@ namespace server.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["Bid"] = new SelectList(_context.Brand, "Bid", "Bid", product.Bid);
             return View(product);
         }
 
@@ -80,6 +82,7 @@ namespace server.Controllers
             {
                 return NotFound();
             }
+            ViewData["Bid"] = new SelectList(_context.Brand, "Bid", "Bid", product.Bid);
             return View(product);
         }
 
@@ -115,6 +118,7 @@ namespace server.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["Bid"] = new SelectList(_context.Brand, "Bid", "Bid", product.Bid);
             return View(product);
         }
 
@@ -127,6 +131,7 @@ namespace server.Controllers
             }
 
             var product = await _context.Product
+                .Include(p => p.Brand)
                 .FirstOrDefaultAsync(m => m.Pid == id);
             if (product == null)
             {

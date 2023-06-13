@@ -1,0 +1,37 @@
+# GET http://localhost:5000/products
+
+# POST http://localhost:5000/product/create
+# Content-Type: application/json
+
+# {
+#     "name": "pekroertrp",
+#     "brandid": "64649107ff6c8eccfe2787e9",
+#     "price": 0,
+#     "stock": 1,
+#     "image": "asd",
+#     "colors": "asd",
+#     "models": "asd",
+#     "description": "hjhberger"
+# }
+
+# DELETE http://localhost:5000/product/delete/64671a8cde6f7a0e4501e75c
+
+# GET http://localhost:5000/product/view/64672ce6f148bda4138e1bbc
+
+# PUT http://localhost:5000/product/edit/64672ce6f148bda4138e1bbc
+# Content-Type: application/json
+
+# {
+#     "name": "ppmkern",
+#     "brandid": "645f8cb79908832439f3302a",
+#     "price": 4545,
+#     "stock": 1,
+#     "image": "gerb",
+#     "color": "asdasd",
+#     "model": "ibrer",
+#     "description": "asdasd"
+# }
+
+# Get http://localhost:5000/product/viewByBrand/6463e24e521327c31f026506
+
+
