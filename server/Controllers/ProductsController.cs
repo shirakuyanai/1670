@@ -59,14 +59,11 @@ namespace server.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Pid,Bid,Name,Price,Stock,Image,Color,Gift,Model,Warranty,Description")] Product product)
         {
-            if (ModelState.IsValid)
-            {
+            
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
-            ViewData["Bid"] = new SelectList(_context.Brand, "Bid", "Bid", product.Bid);
-            return View(product);
+            
         }
 
         // GET: Products/Edit/5
@@ -98,8 +95,7 @@ namespace server.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
+
                 try
                 {
                     _context.Update(product);
@@ -117,9 +113,6 @@ namespace server.Controllers
                     }
                 }
                 return RedirectToAction(nameof(Index));
-            }
-            ViewData["Bid"] = new SelectList(_context.Brand, "Bid", "Bid", product.Bid);
-            return View(product);
         }
 
         // GET: Products/Delete/5

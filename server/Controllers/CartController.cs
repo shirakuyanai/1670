@@ -16,7 +16,17 @@ namespace server.Controllers
         }
         public IActionResult Index()
         {
-            List<CartItem> cart = HttpContext.Session.GetJson<List<CartItem>>("Cart")??new List<CartItem>();
+            List<CartItem> cart;
+            if (HttpContext.Session.GetJson<List<CartItem>>("Cart") != null)
+            {
+                cart = HttpContext.Session.GetJson<List<CartItem>>("Cart");
+            }
+            else
+            {
+                cart = new List<CartItem>();
+            }
+
+
             CartViewModel cartVM = new()
             {
                 CartItems = cart,
@@ -28,24 +38,60 @@ namespace server.Controllers
 		public async Task<IActionResult> Add(int id)
 		{
             Product product = await _context.Product.FindAsync(id);
-			List<CartItem> cart = HttpContext.Session.GetJson<List<CartItem>>("Cart") ?? new List<CartItem>();
-            CartItem cartItem = cart.Where(c => c.ProductId == id).FirstOrDefault();
-			if(cartItem == null)
+            List<CartItem> cart;
+            if (HttpContext.Session.GetJson<List<CartItem>>("Cart") != null)
             {
-                cart.Add(new CartItem(product));
+                cart = HttpContext.Session.GetJson<List<CartItem>>("Cart");
             }
             else
             {
-                cartItem.Quantity += 1;
+                cart = new List<CartItem>();
+            }
+            CartItem cartItem = cart.Where(c => c.ProductId == id).FirstOrDefault();
+			if(cartItem == null)
+            {
+                if(product.Stock >= 1)
+                {
+                    cart.Add(new CartItem(product));
+                }
+                else
+                {
+                    TempData["Error"] = "This product is out of stock";
+                    return Redirect(Request.Headers["Referer"].ToString());
+                }
+            }
+            else
+            {
+                if(cartItem.Quantity < product.Stock)
+                {
+                    cartItem.Quantity += 1;
+                }
+                else
+                {
+                    TempData["Error"] = "This product is out of stock";
+                    return Redirect(Request.Headers["Referer"].ToString());
+                }
             }
             HttpContext.Session.SetJson("Cart", cart);
             TempData["Success"] = "The product has been added";
             return Redirect(Request.Headers["Referer"].ToString());
 		}
+
+
         public async Task<IActionResult> Decrease(int id)
         {
-            List<CartItem> cart = HttpContext.Session.GetJson<List<CartItem>>("Cart") ?? new List<CartItem>();
+            List<CartItem> cart;
+            if (HttpContext.Session.GetJson<List<CartItem>>("Cart") != null)
+            {
+                cart = HttpContext.Session.GetJson<List<CartItem>>("Cart");
+            }
+            else
+            {
+                cart = new List<CartItem>();
+            }
+
             CartItem cartItem = cart.Where(c => c.ProductId == id).FirstOrDefault();
+
             if (cartItem.Quantity>1)
             {
                 --cartItem.Quantity;
@@ -69,7 +115,15 @@ namespace server.Controllers
 
         public async Task<IActionResult> Remove(int id)
         {
-            List<CartItem> cart = HttpContext.Session.GetJson<List<CartItem>>("Cart") ?? new List<CartItem>();
+            List<CartItem> cart;
+            if (HttpContext.Session.GetJson<List<CartItem>>("Cart") != null)
+            {
+                cart = HttpContext.Session.GetJson<List<CartItem>>("Cart");
+            }
+            else
+            {
+                cart = new List<CartItem>();
+            }
             cart.RemoveAll(p => p.ProductId == id);
             if (cart.Count == 0)
             {
