@@ -7,6 +7,8 @@ namespace server.Models
     {
         [Key]
         public int Bid { get; set; }
+        [Required]
+        [StringLength(100)]
         public string Title { get; set; }
     }
 }

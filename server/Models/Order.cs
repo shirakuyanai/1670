@@ -19,6 +19,8 @@ namespace server.Models
 
         public string Created_at { get; set; }
         public string Updated_at { get; set; }
+
+        [RegularExpression("^(Pending|On Transit|Completed)$", ErrorMessage = "Order status must be in 3 types: Pending, On Transit, Completed")]
         public string Status { get; set; }
         public int Total { get; set; }
     }

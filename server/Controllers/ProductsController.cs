@@ -59,11 +59,11 @@ namespace server.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Pid,Bid,Name,Price,Stock,Image,Color,Gift,Model,Warranty,Description")] Product product)
         {
-            
-                _context.Add(product);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            
+
+            _context.Add(product);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
         }
 
         // GET: Products/Edit/5
@@ -96,23 +96,23 @@ namespace server.Controllers
             }
 
 
-                try
+            try
+            {
+                _context.Update(product);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!ProductExists(product.Pid))
                 {
-                    _context.Update(product);
-                    await _context.SaveChangesAsync();
+                    return NotFound();
                 }
-                catch (DbUpdateConcurrencyException)
+                else
                 {
-                    if (!ProductExists(product.Pid))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    throw;
                 }
-                return RedirectToAction(nameof(Index));
+            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Products/Delete/5
@@ -148,14 +148,14 @@ namespace server.Controllers
             {
                 _context.Product.Remove(product);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ProductExists(int id)
         {
-          return (_context.Product?.Any(e => e.Pid == id)).GetValueOrDefault();
+            return (_context.Product?.Any(e => e.Pid == id)).GetValueOrDefault();
         }
     }
 }
