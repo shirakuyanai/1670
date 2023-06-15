@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using server.Areas.Staff.Models;
 
 namespace server.Data
 {
@@ -9,15 +10,15 @@ namespace server.Data
         {
         }
 
-        public DbSet<server.Models.Product> Product { get; set; } = default!;
+        public DbSet<Product> Product { get; set; } = default!;
 
-        public DbSet<server.Models.Brand> Brand { get; set; } = default!;
+        public DbSet<Brand> Brand { get; set; } = default!;
 
         public DbSet<server.Models.Address> Address { get; set; } = default!;
 
-        public DbSet<server.Models.Order> Order { get; set; } = default!;
+        public DbSet<Order> Order { get; set; } = default!;
 
-        public DbSet<server.Models.Order_detail> Order_detail { get; set; } = default!;
+        public DbSet<Order_detail> Order_detail { get; set; } = default!;
 
         public DbSet<server.Models.User> User { get; set; } = default!;
     }

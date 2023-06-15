@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using server.Areas.Staff.Models;
 using server.Data;
 using server.Infranstructure;
 using server.Models;

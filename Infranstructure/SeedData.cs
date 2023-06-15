@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using server.Areas.Staff.Models;
 using server.Data;
 using server.Models;
 

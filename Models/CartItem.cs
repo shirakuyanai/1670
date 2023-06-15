@@ -1,4 +1,6 @@
-﻿namespace server.Models
+﻿using server.Areas.Staff.Models;
+
+namespace server.Models
 {
     public class CartItem
     {
