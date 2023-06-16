@@ -50,7 +50,7 @@ namespace server.Controllers
         }
 
         // GET: Users/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(string? id)
         {
             if (id == null || _context.User == null)
             {
@@ -105,8 +105,8 @@ namespace server.Controllers
             // Set the select list for the role
             ViewData["RoleList"] = new SelectList(new[]
             {
-        new { Value = "Staff", Text = "Staff" },
-        new { Value = "Customer", Text = "Customer" }
+        new { Value = 1, Text = "Staff" },
+        new { Value = 0, Text = "Customer" }
     }, "Value", "Text", user.Role);
 
             return View(user);
@@ -117,7 +117,7 @@ namespace server.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Uid,Username,Role")] User user)
+        public async Task<IActionResult> Edit(string id, [Bind("Uid,Username,Role")] User user)
         {
             if (id != user.Uid)
             {
@@ -147,14 +147,14 @@ namespace server.Controllers
             // Set the select list for the role
             ViewData["RoleList"] = new SelectList(new[]
             {
-        new { Value = "Staff", Text = "Staff" },
-        new { Value = "Customer", Text = "Customer" }
+        new { Value = 1, Text = "Staff" },
+        new { Value = 0, Text = "Customer" }
     }, "Value", "Text", user.Role);
             return View(user);
         }
 
         // GET: Users/Suspend/5
-        public async Task<IActionResult> Suspend(int? id)
+        public async Task<IActionResult> Suspend(string? id)
         {
             if (id == null || _context.User == null)
             {
@@ -173,7 +173,7 @@ namespace server.Controllers
         // POST: Users/Suspend/5
         [HttpPost, ActionName("Suspend")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SuspendConfirmed(int id)
+        public async Task<IActionResult> SuspendConfirmed(string id)
         {
             var user = await _context.User.FindAsync(id);
             if (user == null)
@@ -183,11 +183,11 @@ namespace server.Controllers
 
             if (user.Status.Equals("Suspended"))
             {
-                user.Status = "Online";
+                user.Status = 1;
             }
             else
             {
-                user.Status = "Suspended";
+                user.Status = 0;
             }
 
             await _context.SaveChangesAsync();
@@ -195,7 +195,7 @@ namespace server.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool UserExists(int id)
+        private bool UserExists(string id)
         {
             return (_context.User?.Any(e => e.Uid == id)).GetValueOrDefault();
         }

@@ -9,7 +9,7 @@ namespace server.Models
         public int Address_id { get; set; }
 
         [ForeignKey("User")]
-        public int Uid { get; set; }
+        public string Uid { get; set; }
         public User User { get; set; }
 
         public string Ward { get; set; }

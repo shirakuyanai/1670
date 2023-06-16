@@ -11,7 +11,7 @@ namespace server.Areas.Staff.Models
         public int Oder_id { get; set; }
 
         [ForeignKey("User")]
-        public int Uid { get; set; }
+        public string Uid { get; set; }
         public User User { get; set; }
 
         [ForeignKey("Address")]

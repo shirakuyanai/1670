@@ -1,11 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using server.Data;
+using server.Controllers;
 
-namespace project16_5_2023.Controllers
+
+namespace server.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
+        public HomeController(serverContext context, IHttpContextAccessor httpContextAccessor) : base(context, httpContextAccessor)
+        {
+        }
+
         public IActionResult Index()
         {
+            ViewData["User"] = this_user;
             return View();
         }
     }

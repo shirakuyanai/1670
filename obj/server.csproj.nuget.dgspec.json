@@ -1,27 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "D:\\1670-Application dev\\Code-asm\\14-6-2023\\server.csproj": {}
+    "/Volumes/Data/University/1670 copy/server.csproj": {}
   },
   "projects": {
-    "D:\\1670-Application dev\\Code-asm\\14-6-2023\\server.csproj": {
+    "/Volumes/Data/University/1670 copy/server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\1670-Application dev\\Code-asm\\14-6-2023\\server.csproj",
+        "projectUniqueName": "/Volumes/Data/University/1670 copy/server.csproj",
         "projectName": "server",
-        "projectPath": "D:\\1670-Application dev\\Code-asm\\14-6-2023\\server.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\1670-Application dev\\Code-asm\\14-6-2023\\obj\\",
+        "projectPath": "/Volumes/Data/University/1670 copy/server.csproj",
+        "packagesPath": "/Users/shirakuyanai/.nuget/packages/",
+        "outputPath": "/Volumes/Data/University/1670 copy/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/shirakuyanai/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "/usr/local/share/dotnet/library-packs": {},
+          "/usr/local/share/dotnet/sdk/7.0.302/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,6 +40,18 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Cryptography.KeyDerivation": {
+              "target": "Package",
+              "version": "[7.0.7, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.7, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.7, )"
@@ -54,13 +66,21 @@
               "target": "Package",
               "version": "[7.0.7, )"
             },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.31.0, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[7.0.7, )"
             },
-            "MongoDB.Driver": {
+            "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[2.19.1, )"
+              "version": "[6.31.0, )"
+            },
+            "System.Security.Claims": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [
@@ -82,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
         }
       }
     }
