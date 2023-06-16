@@ -62,15 +62,9 @@ namespace server.Areas.Staff.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Oder_id,Uid,Address_id,Created_at,Updated_at,Status,Total")] Order order)
         {
-            if (ModelState.IsValid)
-            {
                 _context.Add(order);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
-            ViewData["Address_id"] = new SelectList(_context.Address, "Address_id", "Address_id", order.Address_id);
-            ViewData["Uid"] = new SelectList(_context.User, "Uid", "Uid", order.Uid);
-            return View(order);
         }
 
         // GET: Staff/Orders/Edit/5

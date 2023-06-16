@@ -121,6 +121,10 @@
       "PackagePath": "staticwebassets\\Staff\\dist\\img\\AdminLTELogo.png"
     },
     {
+      "Id": "D:\\1670-Application dev\\Code-asm\\14-6-2023\\wwwroot\\Staff\\dist\\img\\TBH.png",
+      "PackagePath": "staticwebassets\\Staff\\dist\\img\\TBH.png"
+    },
+    {
       "Id": "D:\\1670-Application dev\\Code-asm\\14-6-2023\\wwwroot\\Staff\\dist\\img\\avatar.png",
       "PackagePath": "staticwebassets\\Staff\\dist\\img\\avatar.png"
     },
@@ -8191,6 +8195,70 @@
     {
       "Id": "D:\\1670-Application dev\\Code-asm\\14-6-2023\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\14-6-2023\\wwwroot\\images\\PC gaming1.png",
+      "PackagePath": "staticwebassets\\images\\PC gaming1.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\14-6-2023\\wwwroot\\images\\PC gaming2.png",
+      "PackagePath": "staticwebassets\\images\\PC gaming2.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\14-6-2023\\wwwroot\\images\\PC gaming3.png",
+      "PackagePath": "staticwebassets\\images\\PC gaming3.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\14-6-2023\\wwwroot\\images\\PC gaming4.png",
+      "PackagePath": "staticwebassets\\images\\PC gaming4.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\14-6-2023\\wwwroot\\images\\PC gaming5.png",
+      "PackagePath": "staticwebassets\\images\\PC gaming5.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\14-6-2023\\wwwroot\\images\\Screen4.png",
+      "PackagePath": "staticwebassets\\images\\Screen4.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\14-6-2023\\wwwroot\\images\\Screen5.png",
+      "PackagePath": "staticwebassets\\images\\Screen5.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\14-6-2023\\wwwroot\\images\\default_profile_picture.png",
+      "PackagePath": "staticwebassets\\images\\default_profile_picture.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\14-6-2023\\wwwroot\\images\\ltgm3.png",
+      "PackagePath": "staticwebassets\\images\\ltgm3.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\14-6-2023\\wwwroot\\images\\ltgm4.png",
+      "PackagePath": "staticwebassets\\images\\ltgm4.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\14-6-2023\\wwwroot\\images\\ltgm5.png",
+      "PackagePath": "staticwebassets\\images\\ltgm5.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\14-6-2023\\wwwroot\\images\\sound1.png",
+      "PackagePath": "staticwebassets\\images\\sound1.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\14-6-2023\\wwwroot\\images\\sound2.png",
+      "PackagePath": "staticwebassets\\images\\sound2.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\14-6-2023\\wwwroot\\images\\sound3.png",
+      "PackagePath": "staticwebassets\\images\\sound3.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\14-6-2023\\wwwroot\\images\\sound4.png",
+      "PackagePath": "staticwebassets\\images\\sound4.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\14-6-2023\\wwwroot\\images\\sound5.png",
+      "PackagePath": "staticwebassets\\images\\sound5.png"
     },
     {
       "Id": "D:\\1670-Application dev\\Code-asm\\14-6-2023\\wwwroot\\js\\site.js",

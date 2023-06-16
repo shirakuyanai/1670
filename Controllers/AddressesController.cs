@@ -48,7 +48,7 @@ namespace server.Controllers
         // GET: Addresses/Create
         public IActionResult Create()
         {
-            ViewData["Uid"] = new SelectList(_context.Set<User>(), "Uid", "Uid");
+            ViewData["Uid"] = new SelectList(_context.User, "Uid", "Uid");
             return View();
         }
 
@@ -59,14 +59,11 @@ namespace server.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Address_id,Uid,Ward,Town,District,City,Zipcode")] Address address)
         {
-            if (ModelState.IsValid)
-            {
+            
                 _context.Add(address);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
-            ViewData["Uid"] = new SelectList(_context.Set<User>(), "Uid", "Uid", address.Uid);
-            return View(address);
+            
         }
 
         // GET: Addresses/Edit/5
@@ -82,7 +79,7 @@ namespace server.Controllers
             {
                 return NotFound();
             }
-            ViewData["Uid"] = new SelectList(_context.Set<User>(), "Uid", "Uid", address.Uid);
+            ViewData["Uid"] = new SelectList(_context.User, "Uid", "Uid", address.Uid);
             return View(address);
         }
 
@@ -118,7 +115,7 @@ namespace server.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Uid"] = new SelectList(_context.Set<User>(), "Uid", "Uid", address.Uid);
+            ViewData["Uid"] = new SelectList(_context.User, "Uid", "Uid", address.Uid);
             return View(address);
         }
 

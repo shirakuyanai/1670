@@ -1,66 +1,71 @@
 ﻿@model IEnumerable<server.Areas.Staff.Models.Order>
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Areas/Staff/Views/Shared/_Layout.cshtml";
+	ViewData["Title"] = "Index";
+	Layout = "~/Areas/Staff/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Order Management</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+@*<p>
+	<a asp-action="Create">Create New</a>
+</p>*@
 <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.User)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Created_at)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Updated_at)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Total)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.Uid)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address.Address_id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Created_at)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Updated_at)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Total)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Oder_id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Oder_id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Oder_id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
+	<thead>
+		<tr>
+			<th>
+				First Name
+			</th>
+			<th>
+				Last Name
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Address)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Created_at)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Updated_at)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Status)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Total)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.User.FirstName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.User.LastName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Address.Address_id)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Created_at)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Updated_at)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Status)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Total)
+				</td>
+				<td>
+					<a asp-action="Edit" asp-route-id="@item.Oder_id"><button type="button" class="btn btn-success">Edit status</button></a>
+				</td>
+			</tr>
+		}
+	</tbody>
 </table>

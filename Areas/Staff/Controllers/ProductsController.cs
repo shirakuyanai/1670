@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using server.Areas.Staff.Models;
 using server.Data;
+using Microsoft.AspNetCore.Http;
 
 namespace server.Areas.Staff.Controllers
 {
@@ -58,16 +59,25 @@ namespace server.Areas.Staff.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Pid,Bid,Name,Price,Stock,Image,Color,Gift,Model,Warranty,Description")] Product product)
+        public async Task<IActionResult> Create([Bind("Pid,Bid,Name,Price,Stock,Image,Color,Gift,Model,Warranty,Description")] Product product, IFormFile image)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(product);
+			if (image != null && image.Length > 0)
+			{
+				// Lưu trữ tệp ảnh vào thư mục hoặc cơ sở dữ liệu tùy theo yêu cầu của bạn.
+				// lưu trữ tệp ảnh trong thư mục 'wwwroot/images'
+				var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", image.FileName);
+				using (var stream = new FileStream(imagePath, FileMode.Create))
+				{
+					await image.CopyToAsync(stream);
+				}
+
+				// Lưu đường dẫn tệp ảnh vào thuộc tính 'Image' của đối tượng 'Product'
+				product.Image = "/images/" + image.FileName;
+			}
+			_context.Add(product);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["Bid"] = new SelectList(_context.Brand, "Bid", "Bid", product.Bid);
-            return View(product);
+            return RedirectToAction(nameof(Index));
+
         }
 
         // GET: Staff/Products/Edit/5
@@ -92,19 +102,46 @@ namespace server.Areas.Staff.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Pid,Bid,Name,Price,Stock,Image,Color,Gift,Model,Warranty,Description")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("Pid,Bid,Name,Price,Stock,Image,Color,Gift,Model,Warranty,Description")] Product product, IFormFile image)
         {
+            
             if (id != product.Pid)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (ModelState.IsValid || !ModelState.IsValid)
             {
                 try
                 {
+                    if (image != null && image.Length > 0)
+			        {
+				        // Lưu trữ tệp ảnh vào thư mục hoặc cơ sở dữ liệu tùy theo yêu cầu của bạn.
+				        // lưu trữ tệp ảnh trong thư mục 'wwwroot/images'
+				        var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", image.FileName);
+				        using (var stream = new FileStream(imagePath, FileMode.Create))
+				        {
+					        await image.CopyToAsync(stream);
+				        }
+
+				        // Lưu đường dẫn tệp ảnh vào thuộc tính 'Image' của đối tượng 'Product'
+				        product.Image = "/images/" + image.FileName;
+			        }
+                    else
+                    {
+                        // Nếu không có ảnh mới được cung cấp, giữ nguyên giá trị cũ của trường "Image"
+                        var existingProduct = _context.Product.AsNoTracking().FirstOrDefault(p => p.Pid == product.Pid);
+                        string img = existingProduct.Image;
+                        if (img != null || img != "")
+                        {
+                            product.Image = img;
+                        }
+                    }
+
                     _context.Update(product);
                     await _context.SaveChangesAsync();
+
+                    return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -117,10 +154,9 @@ namespace server.Areas.Staff.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
             }
             ViewData["Bid"] = new SelectList(_context.Brand, "Bid", "Bid", product.Bid);
-            return View(product);
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Staff/Products/Delete/5

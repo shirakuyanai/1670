@@ -13,8 +13,8 @@ namespace server.Infrastructure
 
             if (!context.Product.Any())
             {
-                Brand A = new Brand { Title = "Nguyen Luong =" };
-                Brand B = new Brand { Title = "Pham Minh Hiu" };
+                Brand A = new Brand { Title = "Dell" };
+                Brand B = new Brand { Title = "Asus" };
 
                 context.Product.AddRange(
                         new Product
@@ -23,7 +23,7 @@ namespace server.Infrastructure
                             Name = "Acer nitro 5",
                             Price = 151,
                             Stock = 4,
-                            Image = "jkbweqhj.png",
+                            Image = "/images/Screen4.png",
                             Color = "red",
                             Gift = "cdb",
                             Model = "flag ship",
@@ -37,7 +37,7 @@ namespace server.Infrastructure
                             Name = "Mac M1",
                             Price = 133,
                             Stock = 2,
-                            Image = "jkbweqhj.png",
+                            Image = "/images/sound5.png",
                             Color = "brown",
                             Gift = "cdb",
                             Model = "flag ship",
@@ -51,7 +51,7 @@ namespace server.Infrastructure
                             Name = "Asus vivobook",
                             Price = 10000,
                             Stock = 10,
-                            Image = "jkbweqhj.png",
+                            Image = "/images/ltgm4.png",
                             Color = "pink",
                             Gift = "cdb",
                             Model = "flag ship",
@@ -65,7 +65,7 @@ namespace server.Infrastructure
                             Name = "Dell G15",
                             Price = 7878,
                             Stock = 0,
-                            Image = "jkbweqhj.png",
+                            Image = "/images/sound2.png",
                             Color = "green",
                             Gift = "cdb",
                             Model = "flag ship",

@@ -5,10 +5,10 @@
     Layout = "~/Areas/Staff/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Brand Management</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create"><button type="button" class="btn btn-success">Add Brand</button></a>
 </p>
 <table class="table">
     <thead>
@@ -26,9 +26,7 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Bid">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Bid">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Bid">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Bid"><i class="fa-solid fa-pen-to-square m-2" style="font-size:200%; color: white;"></i></a>
             </td>
         </tr>
 }
