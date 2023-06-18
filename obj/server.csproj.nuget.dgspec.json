@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Volumes/Data/University/1670 copy/server.csproj": {}
+    "/Volumes/Data/University/1670/server.csproj": {}
   },
   "projects": {
-    "/Volumes/Data/University/1670 copy/server.csproj": {
+    "/Volumes/Data/University/1670/server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Volumes/Data/University/1670 copy/server.csproj",
+        "projectUniqueName": "/Volumes/Data/University/1670/server.csproj",
         "projectName": "server",
-        "projectPath": "/Volumes/Data/University/1670 copy/server.csproj",
+        "projectPath": "/Volumes/Data/University/1670/server.csproj",
         "packagesPath": "/Users/shirakuyanai/.nuget/packages/",
-        "outputPath": "/Volumes/Data/University/1670 copy/obj/",
+        "outputPath": "/Volumes/Data/University/1670/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/shirakuyanai/.nuget/NuGet/NuGet.Config"

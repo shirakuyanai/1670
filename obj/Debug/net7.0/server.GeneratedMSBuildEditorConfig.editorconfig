@@ -9,145 +9,165 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = server
 build_property.RootNamespace = server
-build_property.ProjectDir = /Volumes/Data/University/1670 copy/
+build_property.ProjectDir = /Volumes/Data/University/1670/
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Volumes/Data/University/1670 copy
+build_property.MSBuildProjectDirectory = /Volumes/Data/University/1670
 build_property._RazorSourceGeneratorDebug = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Brands/Create.cshtml]
+[/Volumes/Data/University/1670/Areas/Staff/Views/Brands/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvQnJhbmRzL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Brands/Delete.cshtml]
+[/Volumes/Data/University/1670/Areas/Staff/Views/Brands/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvQnJhbmRzL0RlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Brands/Details.cshtml]
+[/Volumes/Data/University/1670/Areas/Staff/Views/Brands/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvQnJhbmRzL0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Brands/Edit.cshtml]
+[/Volumes/Data/University/1670/Areas/Staff/Views/Brands/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvQnJhbmRzL0VkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Brands/Index.cshtml]
+[/Volumes/Data/University/1670/Areas/Staff/Views/Brands/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvQnJhbmRzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Orders/Create.cshtml]
+[/Volumes/Data/University/1670/Areas/Staff/Views/Orders/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvT3JkZXJzL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Orders/Delete.cshtml]
+[/Volumes/Data/University/1670/Areas/Staff/Views/Orders/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvT3JkZXJzL0RlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Orders/Details.cshtml]
+[/Volumes/Data/University/1670/Areas/Staff/Views/Orders/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvT3JkZXJzL0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Orders/Edit.cshtml]
+[/Volumes/Data/University/1670/Areas/Staff/Views/Orders/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvT3JkZXJzL0VkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Orders/Index.cshtml]
+[/Volumes/Data/University/1670/Areas/Staff/Views/Orders/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvT3JkZXJzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Products/Create.cshtml]
+[/Volumes/Data/University/1670/Areas/Staff/Views/Products/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvUHJvZHVjdHMvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Products/Delete.cshtml]
+[/Volumes/Data/University/1670/Areas/Staff/Views/Products/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvUHJvZHVjdHMvRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Products/Details.cshtml]
+[/Volumes/Data/University/1670/Areas/Staff/Views/Products/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvUHJvZHVjdHMvRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Products/Edit.cshtml]
+[/Volumes/Data/University/1670/Areas/Staff/Views/Products/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvUHJvZHVjdHMvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Products/Index.cshtml]
+[/Volumes/Data/University/1670/Areas/Staff/Views/Products/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvUHJvZHVjdHMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Staff/Index.cshtml]
+[/Volumes/Data/University/1670/Areas/Staff/Views/Staff/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvU3RhZmYvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Cart/Index.cshtml]
+[/Volumes/Data/University/1670/Views/Addresses/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRkcmVzc2VzL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Volumes/Data/University/1670/Views/Addresses/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRkcmVzc2VzL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Volumes/Data/University/1670/Views/Addresses/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRkcmVzc2VzL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Volumes/Data/University/1670/Views/Addresses/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRkcmVzc2VzL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Volumes/Data/University/1670/Views/Addresses/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRkcmVzc2VzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Volumes/Data/University/1670/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2FydC9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Home/Index.cshtml]
+[/Volumes/Data/University/1670/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Home/Privacy.cshtml]
+[/Volumes/Data/University/1670/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Login/index.cshtml]
+[/Volumes/Data/University/1670/Views/Login/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9naW4vaW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Register/index.cshtml]
+[/Volumes/Data/University/1670/Views/Register/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVnaXN0ZXIvaW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Shared/Components/CartIcon/Default.cshtml]
+[/Volumes/Data/University/1670/Views/Shared/Components/CartIcon/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvQ2FydEljb24vRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Shared/Error.cshtml]
+[/Volumes/Data/University/1670/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Shared/_NotificationPartial.cshtml]
+[/Volumes/Data/University/1670/Views/Shared/_NotificationPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Ob3RpZmljYXRpb25QYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Shared/_ValidationScriptsPartial.cshtml]
+[/Volumes/Data/University/1670/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Users/Create.cshtml]
+[/Volumes/Data/University/1670/Views/Users/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Users/Details.cshtml]
+[/Volumes/Data/University/1670/Views/Users/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Users/Edit.cshtml]
+[/Volumes/Data/University/1670/Views/Users/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Users/Index.cshtml]
+[/Volumes/Data/University/1670/Views/Users/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Users/Suspend.cshtml]
+[/Volumes/Data/University/1670/Views/Users/Suspend.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvU3VzcGVuZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/_ViewImports.cshtml]
+[/Volumes/Data/University/1670/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/_ViewStart.cshtml]
+[/Volumes/Data/University/1670/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Shared/_Layout.cshtml]
+[/Volumes/Data/University/1670/Areas/Staff/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-99r0gjkcir
 
-[/Volumes/Data/University/1670 copy/Views/Shared/_Layout.cshtml]
+[/Volumes/Data/University/1670/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-0qbc12us04
