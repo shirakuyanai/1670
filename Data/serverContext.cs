@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using server.Areas.Staff.Models;
+using server.Models;
 
 namespace server.Data
 {

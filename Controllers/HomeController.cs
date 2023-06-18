@@ -14,7 +14,13 @@ namespace server.Controllers
         public IActionResult Index()
         {
             ViewData["User"] = this_user;
+            var products = _context.Product.ToList();
+            ViewData["Products"] = products;
+            var brands = _context.Brand.ToList();
+            ViewData["Brands"] = brands;
             return View();
         }
+
+        
     }
 }

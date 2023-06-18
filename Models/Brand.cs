@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace server.Areas.Staff.Models
+namespace server.Models
 {
     public class Brand
     {

@@ -3,7 +3,7 @@ using server.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace server.Areas.Staff.Models
+namespace server.Models
 {
     public class Order
     {

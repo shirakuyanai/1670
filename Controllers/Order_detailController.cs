@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using server.Areas.Staff.Models;
+using server.Models;
 using server.Data;
 
 namespace server.Controllers

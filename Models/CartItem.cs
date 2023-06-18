@@ -1,4 +1,4 @@
-﻿using server.Areas.Staff.Models;
+﻿using server.Models;
 
 namespace server.Models
 {

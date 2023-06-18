@@ -1,8 +1,8 @@
-﻿@model server.Models.User
-@using server.Controllers
+﻿@using server.Controllers
 
 @{
-    var user = ViewBag.User as User;
+    var user = ViewData["User"] as User;
+    var brands = ViewData["Brands"] as List<Brand>;
 }
 
 
@@ -62,7 +62,7 @@
                                 <ul >
                                     <li class="title"><a href="/profile">Hello @user.FirstName</a></li>
                                     <li class="title">|</li>
-                                    <li class="title"><a href="#" onClick={handleLogout}>Logout</a></li>
+                                    <li class="title"><a href="/logout">Logout</a></li>
                                     <li class="title">|</li>
                                     <li class="title"><a href="/cart" ><i class="fa fa-shopping-cart"></i>   <sup class="cart-quantity">1</sup></a></li>
                                 </ul>
@@ -89,14 +89,12 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div id="navigation">
                                     <ul>
-                                        <li class="active"><a href="/index">Home</a></li>
+                                        <li class="active"><a href="/">Home</a></li>
                                         <li class="has-sub"><a href="#">Brands</a>
                                             <ul>
-                                                <!-- {brands.map((item, index) => (
-                                                    <li key={index}><a href="#">{item.name}</a></li>
-                                                ))} -->
-                                                <li key={index}><a href="#">Brand 1</a></li>
-                                                <li key={index}><a href="#">Brand 2</a></li>
+                                                @foreach (var brand in brands){
+                                                    <li><a href="#">@brand.Title</a></li>
+                                                }
                                             </ul>
                                         </li>
                                     </ul>
