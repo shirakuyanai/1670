@@ -2,7 +2,6 @@
 using server.Models;
 using server.Data;
 using server.Infranstructure;
-using server.Models;
 using server.Models.ViewModels;
 
 namespace server.Controllers

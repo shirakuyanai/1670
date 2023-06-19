@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using server.Models;
 using server.Data;
-using server.Models;
 
 namespace server.Infrastructure
 {
