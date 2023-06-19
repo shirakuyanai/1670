@@ -90,17 +90,20 @@ namespace server.Areas.Staff.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Oder_id,Uid,Address_id,Created_at,Updated_at,Status,Total")] Order order)
+        public async Task<IActionResult> Edit(int id, [Bind("Oder_id,Updated_at,Status")] Order order)
         {
-            if (id != order.Oder_id)
-            {
-                return NotFound();
-            }
 
-            if (ModelState.IsValid)
+            if (order.Status != null)
             {
                 try
                 {
+                    var foundOrder = _context.Order.AsNoTracking().FirstOrDefault(o => o.Oder_id == order.Oder_id);
+                    order.Address_id = foundOrder.Address_id;
+                    order.Uid = foundOrder.Uid;
+                    order.Created_at = foundOrder.Created_at;
+                    order.Updated_at = DateTime.Now.ToString();
+                    order.Total = foundOrder.Total;
+
                     _context.Update(order);
                     await _context.SaveChangesAsync();
                 }
@@ -117,8 +120,6 @@ namespace server.Areas.Staff.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Address_id"] = new SelectList(_context.Address, "Address_id", "Address_id", order.Address_id);
-            ViewData["Uid"] = new SelectList(_context.User, "Uid", "Uid", order.Uid);
             return View(order);
         }
 

@@ -3,8 +3,18 @@
 @{
     var user = ViewData["User"] as User;
     var brands = ViewData["Brands"] as List<Brand>;
+    var cartItems = ViewData["CartItems"] as List<CartItem>;
+    int count = 0;
 }
 
+@if(cartItems != null)
+{
+    foreach(var cart in cartItems)
+    {
+        count += cart.Quantity;
+    }
+    Console.WriteLine(count);
+}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +57,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-8">
                         <div class="logo">
-                            <a href="/index"><img src="~/images/logo.png" alt=""/> </a>
+                            <a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/logo.png" alt="" /> </a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -64,7 +74,7 @@
                                     <li class="title">|</li>
                                     <li class="title"><a href="/logout">Logout</a></li>
                                     <li class="title">|</li>
-                                    <li class="title"><a href="/cart" ><i class="fa fa-shopping-cart"></i>   <sup class="cart-quantity">1</sup></a></li>
+                                    <li class="title"><a href="/cart"><i class="fa fa-shopping-cart"></i>   <sup class="cart-quantity">@count</sup></a></li>
                                 </ul>
                             }
                             else{
@@ -73,7 +83,7 @@
                                     <li class="title">|</li>
                                     <li class="title"><a href="/register">Register</a></li>
                                     <li class="title">|</li>
-                                    <li class="title"><a href="/cart" ><i class="fa fa-shopping-cart"></i>    <sup class="cart-quantity">1</sup></a></li>
+                                    <li class="title"><a href="/cart"><i class="fa fa-shopping-cart"></i>    <sup class="cart-quantity">@count</sup></a></li>
                                 </ul>
                             }
                             
@@ -82,23 +92,30 @@
                     </div>
                 </div>
 
-                <!-- Nav bar -->
-                <div class="navigation">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div id="navigation">
-                                    <ul>
-                                        <li class="active"><a href="/">Home</a></li>
-                                        <li class="has-sub"><a href="#">Brands</a>
-                                            <ul>
-                                                @foreach (var brand in brands){
+                
+            </div>
+            <!-- Nav bar -->
+            <div class="navigation">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div id="navigation">
+                                <ul>
+                                    <li class="active"><a href="/">Home</a></li>
+                                    <li class="has-sub">
+                                        <a href="#">Brands</a>
+                                        <ul>
+                                            @if (brands != null)
+                                            {
+                                                @foreach (var brand in brands)
+                                                {
                                                     <li><a href="#">@brand.Title</a></li>
                                                 }
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
+                                            }
+
+                                        </ul>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>

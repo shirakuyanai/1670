@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using server.Data;
 using server.Controllers;
-
+using server.Models;
+using server.Infranstructure;
 
 namespace server.Controllers
 {
@@ -18,9 +19,22 @@ namespace server.Controllers
             ViewData["Products"] = products;
             var brands = _context.Brand.ToList();
             ViewData["Brands"] = brands;
+            ViewData["CartItems"] = GetCartItems();
             return View();
         }
 
-        
+        private List<CartItem> GetCartItems()
+        {
+            List<CartItem> cart;
+            if (HttpContext.Session.GetJson<List<CartItem>>("Cart") != null)
+            {
+                cart = HttpContext.Session.GetJson<List<CartItem>>("Cart");
+            }
+            else
+            {
+                cart = new List<CartItem>();
+            }
+            return cart;
+        }
     }
 }

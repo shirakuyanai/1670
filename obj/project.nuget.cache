@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TLemk/TzolkheqzazN12xPEHAcJjec5pr11MDuZBSundRkgJk9zdZ/fAVnnLKS6T13jgm69Qj8oEBcZ+E2oD/Q==",
+  "dgSpecHash": "MkRbxF5JOxN3btIIGpQJkBX+trB9bTlT4twvu1P9th6Q8PKAfMzh8k7HQv5rTMcSzxkzodmP46xfqAf/Tctg2Q==",
   "success": true,
-  "projectFilePath": "C:\\asm\\server.csproj",
+  "projectFilePath": "D:\\1670-Application dev\\Code-asm\\19-6-2023\\server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

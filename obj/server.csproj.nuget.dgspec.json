@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\asm\\server.csproj": {}
+    "D:\\1670-Application dev\\Code-asm\\19-6-2023\\server.csproj": {}
   },
   "projects": {
-    "C:\\asm\\server.csproj": {
+    "D:\\1670-Application dev\\Code-asm\\19-6-2023\\server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\asm\\server.csproj",
+        "projectUniqueName": "D:\\1670-Application dev\\Code-asm\\19-6-2023\\server.csproj",
         "projectName": "server",
-        "projectPath": "C:\\asm\\server.csproj",
+        "projectPath": "D:\\1670-Application dev\\Code-asm\\19-6-2023\\server.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\asm\\obj\\",
+        "outputPath": "D:\\1670-Application dev\\Code-asm\\19-6-2023\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -102,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
