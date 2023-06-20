@@ -23,28 +23,11 @@ namespace server.Areas.Staff.Controllers
         // GET: Staff/Brands
         public async Task<IActionResult> Index()
         {
-              return _context.Brand != null ? 
-                          View(await _context.Brand.ToListAsync()) :
-                          Problem("Entity set 'serverContext.Brand'  is null.");
+            return _context.Brand != null ?
+                        View(await _context.Brand.ToListAsync()) :
+                        Problem("Entity set 'serverContext.Brand'  is null.");
         }
 
-        // GET: Staff/Brands/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null || _context.Brand == null)
-            {
-                return NotFound();
-            }
-
-            var brand = await _context.Brand
-                .FirstOrDefaultAsync(m => m.Bid == id);
-            if (brand == null)
-            {
-                return NotFound();
-            }
-
-            return View(brand);
-        }
 
         // GET: Staff/Brands/Create
         public IActionResult Create()
@@ -119,46 +102,9 @@ namespace server.Areas.Staff.Controllers
             return View(brand);
         }
 
-        // GET: Staff/Brands/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null || _context.Brand == null)
-            {
-                return NotFound();
-            }
-
-            var brand = await _context.Brand
-                .FirstOrDefaultAsync(m => m.Bid == id);
-            if (brand == null)
-            {
-                return NotFound();
-            }
-
-            return View(brand);
-        }
-
-        // POST: Staff/Brands/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            if (_context.Brand == null)
-            {
-                return Problem("Entity set 'serverContext.Brand'  is null.");
-            }
-            var brand = await _context.Brand.FindAsync(id);
-            if (brand != null)
-            {
-                _context.Brand.Remove(brand);
-            }
-            
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
         private bool BrandExists(int id)
         {
-          return (_context.Brand?.Any(e => e.Bid == id)).GetValueOrDefault();
+            return (_context.Brand?.Any(e => e.Bid == id)).GetValueOrDefault();
         }
     }
 }

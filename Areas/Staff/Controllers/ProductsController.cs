@@ -28,29 +28,11 @@ namespace server.Areas.Staff.Controllers
             return View(await serverContext.ToListAsync());
         }
 
-        // GET: Staff/Products/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null || _context.Product == null)
-            {
-                return NotFound();
-            }
-
-            var product = await _context.Product
-                .Include(p => p.Brand)
-                .FirstOrDefaultAsync(m => m.Pid == id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            return View(product);
-        }
 
         // GET: Staff/Products/Create
         public IActionResult Create()
         {
-            ViewData["Bid"] = new SelectList(_context.Brand, "Bid", "Bid");
+            ViewData["Bid"] = new SelectList(_context.Brand, "Bid", "Title");
             return View();
         }
 
@@ -61,21 +43,21 @@ namespace server.Areas.Staff.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Pid,Bid,Name,Price,Stock,Image,Color,Gift,Model,Warranty,Description")] Product product, IFormFile image)
         {
-			if (image != null && image.Length > 0)
-			{
-				// Lưu trữ tệp ảnh vào thư mục hoặc cơ sở dữ liệu tùy theo yêu cầu của bạn.
-				// lưu trữ tệp ảnh trong thư mục 'wwwroot/images'
-				var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", image.FileName);
-				using (var stream = new FileStream(imagePath, FileMode.Create))
-				{
-					await image.CopyToAsync(stream);
-				}
+            if (image != null && image.Length > 0)
+            {
+                // Lưu trữ tệp ảnh vào thư mục hoặc cơ sở dữ liệu tùy theo yêu cầu của bạn.
+                // lưu trữ tệp ảnh trong thư mục 'wwwroot/images'
+                var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", image.FileName);
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    await image.CopyToAsync(stream);
+                }
 
-				// Lưu đường dẫn tệp ảnh vào thuộc tính 'Image' của đối tượng 'Product'
-				product.Image = "/images/" + image.FileName;
-			}
-			_context.Add(product);
-                await _context.SaveChangesAsync();
+                // Lưu đường dẫn tệp ảnh vào thuộc tính 'Image' của đối tượng 'Product'
+                product.Image = "/images/" + image.FileName;
+            }
+            _context.Add(product);
+            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
 
         }
@@ -93,7 +75,7 @@ namespace server.Areas.Staff.Controllers
             {
                 return NotFound();
             }
-            ViewData["Bid"] = new SelectList(_context.Brand, "Bid", "Bid", product.Bid);
+            ViewData["Bid"] = new SelectList(_context.Brand, "Bid", "Title", product.Bid);
             return View(product);
         }
 
@@ -104,7 +86,7 @@ namespace server.Areas.Staff.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Pid,Bid,Name,Price,Stock,Image,Color,Gift,Model,Warranty,Description")] Product product, IFormFile image)
         {
-            
+
             if (id != product.Pid)
             {
                 return NotFound();
@@ -115,18 +97,18 @@ namespace server.Areas.Staff.Controllers
                 try
                 {
                     if (image != null && image.Length > 0)
-			        {
-				        // Lưu trữ tệp ảnh vào thư mục hoặc cơ sở dữ liệu tùy theo yêu cầu của bạn.
-				        // lưu trữ tệp ảnh trong thư mục 'wwwroot/images'
-				        var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", image.FileName);
-				        using (var stream = new FileStream(imagePath, FileMode.Create))
-				        {
-					        await image.CopyToAsync(stream);
-				        }
+                    {
+                        // Lưu trữ tệp ảnh vào thư mục hoặc cơ sở dữ liệu tùy theo yêu cầu của bạn.
+                        // lưu trữ tệp ảnh trong thư mục 'wwwroot/images'
+                        var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", image.FileName);
+                        using (var stream = new FileStream(imagePath, FileMode.Create))
+                        {
+                            await image.CopyToAsync(stream);
+                        }
 
-				        // Lưu đường dẫn tệp ảnh vào thuộc tính 'Image' của đối tượng 'Product'
-				        product.Image = "/images/" + image.FileName;
-			        }
+                        // Lưu đường dẫn tệp ảnh vào thuộc tính 'Image' của đối tượng 'Product'
+                        product.Image = "/images/" + image.FileName;
+                    }
                     else
                     {
                         // Nếu không có ảnh mới được cung cấp, giữ nguyên giá trị cũ của trường "Image"
@@ -159,47 +141,10 @@ namespace server.Areas.Staff.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: Staff/Products/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null || _context.Product == null)
-            {
-                return NotFound();
-            }
-
-            var product = await _context.Product
-                .Include(p => p.Brand)
-                .FirstOrDefaultAsync(m => m.Pid == id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            return View(product);
-        }
-
-        // POST: Staff/Products/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            if (_context.Product == null)
-            {
-                return Problem("Entity set 'serverContext.Product'  is null.");
-            }
-            var product = await _context.Product.FindAsync(id);
-            if (product != null)
-            {
-                _context.Product.Remove(product);
-            }
-            
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
 
         private bool ProductExists(int id)
         {
-          return (_context.Product?.Any(e => e.Pid == id)).GetValueOrDefault();
+            return (_context.Product?.Any(e => e.Pid == id)).GetValueOrDefault();
         }
     }
 }

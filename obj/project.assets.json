@@ -11838,26 +11838,26 @@
     ]
   },
   "packageFolders": {
-    "/Users/shirakuyanai/.nuget/packages/": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Volumes/Data/University/1670/server.csproj",
+      "projectUniqueName": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\server.csproj",
       "projectName": "server",
-      "projectPath": "/Volumes/Data/University/1670/server.csproj",
-      "packagesPath": "/Users/shirakuyanai/.nuget/packages/",
-      "outputPath": "/Volumes/Data/University/1670/obj/",
+      "projectPath": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\server.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/shirakuyanai/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/library-packs": {},
-        "/usr/local/share/dotnet/sdk/7.0.302/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -11938,7 +11938,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
