@@ -26,7 +26,12 @@ namespace server.Areas.Staff.Controllers
 			{
 				return Redirect("/");
 			}
+			if (this_user.Role != 2)
+			{
+				return Redirect("/");
+			}
 			ViewData["User"] = this_user;
+
 			var serverContext = _context.Product.Include(p => p.Brand);
             return View(await serverContext.ToListAsync());
         }
@@ -35,7 +40,17 @@ namespace server.Areas.Staff.Controllers
         // GET: Staff/Products/Create
         public IActionResult Create()
         {
-            ViewData["Bid"] = new SelectList(_context.Brand, "Bid", "Title");
+			if (this_user == null)
+			{
+				return Redirect("/");
+			}
+			if (this_user.Role != 2)
+			{
+				return Redirect("/");
+			}
+			ViewData["User"] = this_user;
+
+			ViewData["Bid"] = new SelectList(_context.Brand, "Bid", "Title");
             return View();
         }
 
@@ -46,7 +61,15 @@ namespace server.Areas.Staff.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Pid,Bid,Name,Price,Stock,Image,Color,Gift,Model,Warranty,Description")] Product product, IFormFile image)
         {
-            if (image != null && image.Length > 0)
+			if (this_user == null)
+			{
+				return Redirect("/");
+			}
+			if (this_user.Role != 2)
+			{
+				return Redirect("/");
+			}
+			if (image != null && image.Length > 0)
             {
                 // Lưu trữ tệp ảnh vào thư mục hoặc cơ sở dữ liệu tùy theo yêu cầu của bạn.
                 // lưu trữ tệp ảnh trong thư mục 'wwwroot/images'
@@ -61,14 +84,23 @@ namespace server.Areas.Staff.Controllers
             }
             _context.Add(product);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return Redirect("/Staff/Products");
 
         }
 
         // GET: Staff/Products/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Product == null)
+			if (this_user == null)
+			{
+				return Redirect("/");
+			}
+            if (this_user.Role != 2)
+            {
+				return Redirect("/");
+			}
+			ViewData["User"] = this_user;
+			if (id == null || _context.Product == null)
             {
                 return NotFound();
             }
@@ -89,8 +121,11 @@ namespace server.Areas.Staff.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Pid,Bid,Name,Price,Stock,Image,Color,Gift,Model,Warranty,Description")] Product product, IFormFile image)
         {
-
-            if (id != product.Pid)
+			if (this_user == null || this_user.Role != 2)
+			{
+				return Redirect("/");
+			}
+			if (id != product.Pid)
             {
                 return NotFound();
             }

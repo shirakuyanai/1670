@@ -21,7 +21,7 @@ namespace server.Areas.Staff.Controllers
         // GET: Staff/Brands
         public async Task<IActionResult> Index()
         {
-			if (this_user == null)
+			if (this_user == null || this_user.Role != 2)
 			{
 				return Redirect("/");
 			}
@@ -35,7 +35,16 @@ namespace server.Areas.Staff.Controllers
         // GET: Staff/Brands/Create
         public IActionResult Create()
         {
-            return View();
+			if (this_user == null)
+			{
+				return Redirect("/");
+			}
+			if (this_user.Role != 2)
+			{
+				return Redirect("/");
+			}
+			ViewData["User"] = this_user;
+			return View();
         }
 
         // POST: Staff/Brands/Create
@@ -45,7 +54,16 @@ namespace server.Areas.Staff.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Bid,Title")] Brand brand)
         {
-            if (ModelState.IsValid)
+			if (this_user == null)
+			{
+				return Redirect("/");
+			}
+			if (this_user.Role != 2)
+			{
+				return Redirect("/");
+			}
+
+			if (ModelState.IsValid)
             {
                 _context.Add(brand);
                 await _context.SaveChangesAsync();
@@ -57,7 +75,17 @@ namespace server.Areas.Staff.Controllers
         // GET: Staff/Brands/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Brand == null)
+			if (this_user == null)
+			{
+				return Redirect("/");
+			}
+			if (this_user.Role != 2)
+			{
+				return Redirect("/");
+			}
+			ViewData["User"] = this_user;
+
+			if (id == null || _context.Brand == null)
             {
                 return NotFound();
             }
@@ -77,7 +105,16 @@ namespace server.Areas.Staff.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Bid,Title")] Brand brand)
         {
-            if (id != brand.Bid)
+			if (this_user == null)
+			{
+				return Redirect("/");
+			}
+			if (this_user.Role != 2)
+			{
+				return Redirect("/");
+			}
+
+			if (id != brand.Bid)
             {
                 return NotFound();
             }

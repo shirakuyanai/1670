@@ -29,6 +29,15 @@ namespace server.Models
         public string Warranty { get; set; }
         public string Description { get; set; }
 
+        public DateTime Create_At { get; set; }
+        public DateTime Update_At { get; set; }
+        public int viewCount { get; set; }
 
+        public Product()
+        {
+            viewCount = 0;
+            Create_At = DateTime.Now;
+            Update_At = DateTime.MinValue;
+        }
     }
 }

@@ -40,21 +40,28 @@ namespace server.Controllers
         public IActionResult Login(string username, string password)
         {
             var user = _context.User.FirstOrDefault(u => u.Username == username);
-            if (user != null && VerifyPassword(password, user.Password))
+            
+			if (user != null && VerifyPassword(password, user.Password))
             {
-                var tokenString = GenerateJwtToken(user);
-                HttpContext.Session.SetString("JwtToken", tokenString);
+				
+				var tokenString = GenerateJwtToken(user);
+				
+
+				HttpContext.Session.SetString("JwtToken", tokenString);
+
                 if (user.Role == 1)
                 {
-                    return RedirectToAction("Index", "Home");
+					Console.WriteLine(user.Role);
+					return RedirectToAction("Index", "Home");
                 }
                 else if (user.Role == 2)
                 {
-                    return Redirect("/staff/staff");
+					Console.WriteLine(user.Role);
+					return Redirect("/staff/staff");
                 }
                 else
                 {
-                    return Redirect("/manager");
+					return Redirect("/manager");
                 }
             }
 

@@ -66,7 +66,10 @@ namespace server.Controllers
                     LastName = found_user.LastName,
                     Email = found_user.Email,
                     Phone = found_user.Phone,
-                };
+                    Role = found_user.Role,
+					Status = found_user.Status,
+					Verified = found_user.Verified,
+				};
 
                 return user;
             }

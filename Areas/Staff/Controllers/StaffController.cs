@@ -17,8 +17,13 @@ namespace server.Areas.Staff.Controllers
         
         public IActionResult Index()
         {
+            Console.WriteLine(this_user.Role);
 			if (this_user == null)
 			{
+				return Redirect("/");
+			}
+            if (this_user.Role != 2)
+            {
 				return Redirect("/");
 			}
 			ViewData["User"] = this_user;
