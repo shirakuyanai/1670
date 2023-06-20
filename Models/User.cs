@@ -57,6 +57,17 @@ namespace server.Models
         public string LastName { get; set; }
         public string Phone { get; set; }
         public int Role { get; set; }
-        public int Status { get; set; }
+        public bool Status { get; set; }
+        public bool Verified { get; set; }
+
+        public User()
+        {
+            Role = 0;
+            // 1: Customer
+            // 2: Staff
+            // 3. Manager
+            Status = false;
+            Verified = false;
+        }
     }
 }

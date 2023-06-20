@@ -21,8 +21,10 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<serverContext>()
     .AddDefaultTokenProviders();
 
+builder.Services.AddTransient<EmailSender>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
 
 var app = builder.Build();
 

@@ -2,7 +2,7 @@
 using server.Models;
 using server.Models.ViewModels;
 
-namespace server.Infranstructure.Components
+namespace server.Infrastructure.Components
 {
     public class CartIconViewComponent : ViewComponent
     {

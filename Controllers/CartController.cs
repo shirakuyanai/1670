@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using server.Models;
 using server.Data;
-using server.Infranstructure;
+using server.Infrastructure;
 using server.Models.ViewModels;
 
 namespace server.Controllers

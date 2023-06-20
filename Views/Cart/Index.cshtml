@@ -2,10 +2,168 @@
 @model CartViewModel
 
 @{
-    ViewData["Title"] = "Cart Overview";
+    ViewData["Title"] = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@if (Model.CartItems.Count > 0)
+
+    <div class="m-4 bg-white">
+      <div class="text-center m-4">
+        <h1 class="fw-medium fs-1">Shopping cart</h1>
+      </div>
+      <div class="d-flex justify-content-center m-0">
+        <a class="continue_shopping" href="/">
+          <p class="fw-light fs-6">
+            <u>Continue shopping</u>
+          </p>
+        </a>
+      </div>
+      <div class="container mt-5">
+        @if (Model.CartItems.Count > 0){
+            
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th class="col-7 ps-0 text-uppercase fw-light fs-6">
+                            Product
+                        </th>
+                        <th class="text-end pe-0 col-1 text-uppercase fw-light fs-6">
+                            Price
+                        </th>
+                        <th class="text-end pe-0 col-3 text-uppercase fw-light fs-6 d-none d-md-table-cell">
+                            Quantity
+                        </th>
+                        <th class="text-end pe-0 col-1 text-uppercase fw-light fs-6 d-none d-md-table-cell">
+                            Total
+                        </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.CartItems){
+                            <tr>
+                            <th class="d-flex ps-0 pb-3 pt-3">
+                                <div class="me-5">
+                                <img
+                                    class="rounded"
+                                    style="width: 64px; height: 64px"
+                                    src="@item.Image"
+                                />
+                                </div>
+                                <div>
+                                <div>
+                                    <a href="#" class="prod_name text-dark fw-medium fs-6">
+                                    @item.ProductName
+                                    </a>
+                                </div>
+                                <div>
+                                    <a
+                                    asp-action="Remove" asp-route-id="@item.ProductId"
+                                    class="text-secondary-emphasis fw-light fs-6"
+                                    >
+                                    <span>Remove</span>
+                                    </a>
+                                </div>
+                                </div>
+                            </th>
+                            <th class="pe-0 pb-md-3 pt-md-3" fw-light fs-6>
+                                <p class="pt-md-3 pb-2 fw-light fs-6 m-0 text-end">
+                                $@item.Price
+                                </p>
+                                <div class="d-flex p-0 justify-content-end">
+                                <p class="me-2 d-md-none d-inline m-0 p-0 fs-6 fw-light">
+                                    <b>Qty:</b>
+                                </p>
+                                <input
+                                    type="number"
+                                    class="ps-3 m-0 d-md-none d-inline m-0 p-0"
+                                    style="width: 65px"
+                                    value="@item.Quantity"
+                                />
+                                </div>
+                            </th>
+                            <th class="text-end pe-0 pt-4 fw-light fs-6 d-none d-md-table-cell">
+                            <input type="number" class="ps-3" style="width: 65px" value="@item.Quantity" data-product-id="@item.ProductId" />
+
+                            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                            <script>
+                                $(document).ready(function () {
+                                    $('input.ps-3').on('change', function () {
+                                        var quantityInput = $(this);
+                                        var productId = quantityInput.data('product-id');
+                                        var previousValue = quantityInput.data('previous-value') || 0;
+                                        var currentValue = parseInt(quantityInput.val());
+
+                                        if (currentValue > previousValue) {
+                                            // Value increased
+                                            window.location.href = '/Cart/Add?id=' + productId;
+                                        } else if (currentValue < previousValue) {
+                                            // Value decreased
+                                            window.location.href = '/Cart/Decrease?id=' + productId;
+                                        }
+
+                                        // Update the previous value
+                                        quantityInput.data('previous-value', currentValue);
+                                    });
+                                });
+                            </script>
+
+
+                            </th>
+                            <th class="text-end pe-0 pt-4 fw-light fs-6 d-none d-md-table-cell">
+                                @item.Total
+                            </th>
+                            </tr>
+                        }
+                        <th class="col-7"></th>
+                        <th class="text-end col-1"></th>
+                        <th class="text-end col-3 fw-light fs-5 d-none d-md-table-cell">
+                        Subtotal
+                        </th>
+                        <th class="text-end col-1 fw-light fs-5 d-none d-md-table-cell">
+                        $231023
+                        </th>
+                        
+                    </tbody>
+                    <th class="fs-3 d-md-none">
+                        Subtotal
+                    </th>
+                    <th class="fs-3 d-md-none">
+                        $231023
+                    </th>
+                </table>
+            <div class="d-flex justify-content-around">
+            <a
+                asp-action="Clear"
+                class="btn border text-white bg-danger"
+                onclick="return confirm('Are you sure you want to clear the cart?')"
+            >
+                Clear cart
+            </a>
+            <a class="btn bg-dark text-white" href="/checkout">
+                Check out
+            </a>
+            </div>
+        }
+
+        else{
+            <div class="text-center m-4">
+                <div>
+                    <p>Your cart is currently empty.</p>
+                </div>
+                <a class="btn border bg-dark text-white m-3" href="/">
+                    CONTINUE SHOPPING
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        }
+      </div>
+    </div>
+
+
+
+
+
+<!-- @if (Model.CartItems.Count > 0)
 {
     <table class="table">
         <tr>
@@ -46,4 +204,6 @@ else
 {
     <h3 class="display-4 text-center">Your cart is empty.</h3>
 }
+ -->
+
 

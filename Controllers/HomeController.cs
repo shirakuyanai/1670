@@ -2,14 +2,17 @@
 using server.Data;
 using server.Controllers;
 using server.Models;
-using server.Infranstructure;
+using server.Infrastructure;
 
 namespace server.Controllers
 {
     public class HomeController : BaseController
     {
-        public HomeController(serverContext context, IHttpContextAccessor httpContextAccessor) : base(context, httpContextAccessor)
+        private readonly EmailSender _emailSender;
+
+        public HomeController(serverContext context, IHttpContextAccessor httpContextAccessor, EmailSender emailSender) : base(context, httpContextAccessor)
         {
+            _emailSender = emailSender;
         }
 
         public IActionResult Index()
@@ -22,6 +25,16 @@ namespace server.Controllers
             ViewData["CartItems"] = GetCartItems();
             return View();
         }
+
+        [HttpGet]
+        [Route("/product/{id}")]
+        public IActionResult Product(int id)
+        {
+            ViewData["Product"] = _context.Product.FirstOrDefault(p => p.Pid == id);
+            return View();
+        }
+
+        
 
         private List<CartItem> GetCartItems()
         {

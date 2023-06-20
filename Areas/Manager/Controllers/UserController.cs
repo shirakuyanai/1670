@@ -143,13 +143,13 @@ namespace server.Areas.Manager.Controllers
                 return NotFound();
             }
 
-            if (user.Status ==1)
+            if (user.Status == false)
             {
-                user.Status = 2;
+                user.Status = true;
             }
             else
             {
-                user.Status = 1;
+                user.Status = false;
             }
 
             await _context.SaveChangesAsync();
