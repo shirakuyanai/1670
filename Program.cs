@@ -22,9 +22,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddDefaultTokenProviders();
 
 builder.Services.AddTransient<EmailSender>();
-// Add services to the container.
 builder.Services.AddControllersWithViews();
-
 
 var app = builder.Build();
 
@@ -34,7 +32,6 @@ app.UseSession();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -53,8 +50,9 @@ app.UseEndpoints(endpoints =>
       pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
     );
     endpoints.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+      name: "default",
+      pattern: "{controller=Home}/{action=Index}/{id?}"
+    );
 });
 
 var context = app.Services.CreateScope().ServiceProvider.GetRequiredService<serverContext>();

@@ -44,7 +44,18 @@ namespace server.Controllers
             {
                 var tokenString = GenerateJwtToken(user);
                 HttpContext.Session.SetString("JwtToken", tokenString);
-                return RedirectToAction("Index", "Home");
+                if (user.Role == 1)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                else if (user.Role == 2)
+                {
+                    return Redirect("/staff/staff");
+                }
+                else
+                {
+                    return Redirect("/manager");
+                }
             }
 
             // Login failed

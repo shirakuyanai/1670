@@ -28,9 +28,12 @@ namespace server.Controllers
 
         [HttpGet]
         [Route("/product/{id}")]
-        public IActionResult Product(int id)
+        public async Task<IActionResult> Product(int id)
         {
+            var product = _context.Product.FirstOrDefault(p => p.Pid == id);
+            //product.viewCount++;
             ViewData["Product"] = _context.Product.FirstOrDefault(p => p.Pid == id);
+            //await _context.SaveChangesAsync();
             return View();
         }
 

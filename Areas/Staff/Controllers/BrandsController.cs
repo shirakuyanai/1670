@@ -7,23 +7,26 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using server.Models;
 using server.Data;
+using server.Controllers;
 
 namespace server.Areas.Staff.Controllers
 {
     [Area("Staff")]
-    public class BrandsController : Controller
+    public class BrandsController : BaseController
     {
-        private readonly serverContext _context;
-
-        public BrandsController(serverContext context)
+        public BrandsController(serverContext context, IHttpContextAccessor httpContextAccessor) : base(context, httpContextAccessor)
         {
-            _context = context;
         }
 
         // GET: Staff/Brands
         public async Task<IActionResult> Index()
         {
-            return _context.Brand != null ?
+			if (this_user == null)
+			{
+				return Redirect("/");
+			}
+			ViewData["User"] = this_user;
+			return _context.Brand != null ?
                         View(await _context.Brand.ToListAsync()) :
                         Problem("Entity set 'serverContext.Brand'  is null.");
         }

@@ -62,7 +62,7 @@ namespace server.Models
 
         public User()
         {
-            Role = 0;
+            Role = 1;
             // 1: Customer
             // 2: Staff
             // 3. Manager

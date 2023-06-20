@@ -8,23 +8,26 @@ using Microsoft.EntityFrameworkCore;
 using server.Models;
 using server.Data;
 using Microsoft.AspNetCore.Http;
+using server.Controllers;
 
 namespace server.Areas.Staff.Controllers
 {
     [Area("Staff")]
-    public class ProductsController : Controller
+    public class ProductsController : BaseController
     {
-        private readonly serverContext _context;
-
-        public ProductsController(serverContext context)
-        {
-            _context = context;
+        public ProductsController(serverContext context, IHttpContextAccessor httpContextAccessor) : base(context, httpContextAccessor)
+		{
         }
 
         // GET: Staff/Products
         public async Task<IActionResult> Index()
         {
-            var serverContext = _context.Product.Include(p => p.Brand);
+			if (this_user == null)
+			{
+				return Redirect("/");
+			}
+			ViewData["User"] = this_user;
+			var serverContext = _context.Product.Include(p => p.Brand);
             return View(await serverContext.ToListAsync());
         }
 
