@@ -8,29 +8,46 @@ using Microsoft.EntityFrameworkCore;
 using server.Models;
 using server.Data;
 using Microsoft.AspNetCore.Http;
+using server.Controllers;
 
 namespace server.Areas.Manager.Controllers
 {
     [Area("Manager")]
-    public class UsersController : Controller
+    public class UsersController : BaseController
     {
-        private readonly serverContext _context;
 
-        public UsersController(serverContext context)
+        public UsersController(serverContext context, IHttpContextAccessor httpContextAccessor) : base(context, httpContextAccessor)
         {
-            _context = context;
+
         }
 
-        // GET: Users
+        // GET: Manager/Users
         public async Task<IActionResult> Index()
         {
+            if (this_user == null)
+            {
+                return Redirect("/");
+            }
+            if (this_user.Role != 3)
+            {
+                return Redirect("/");
+            }
+            ViewData["User"] = this_user;
+
             return _context.User != null ?
                         View(await _context.User.ToListAsync()) :
                         Problem("Entity set 'serverContext.User'  is null.");
-
         }
-        // GET: Users/Search
+        // GET: Manager/Users/Search
         public async Task<IActionResult> Search(string SearchString) {
+            if (this_user == null)
+            {
+                return Redirect("/");
+            }
+            if (this_user.Role != 3)
+            {
+                return Redirect("/");
+            }
             ViewData["CurrentFilter"] = SearchString;
             var users = from user in _context.User
                         select user;
@@ -42,9 +59,17 @@ namespace server.Areas.Manager.Controllers
         }
 
 
-        // GET: Users/Sort
+        // GET: Manager/Users/Sort
         public async Task<IActionResult> Sort(string SortOrder)
         {
+            if (this_user == null)
+            {
+                return Redirect("/");
+            }
+            if (this_user.Role != 3)
+            {
+                return Redirect("/");
+            }
             ViewData["UsernameSort"] = string.IsNullOrEmpty(SortOrder) ? "username_sort" : "";
             ViewData["StatusSort"] = SortOrder == "Status" ? "status_sort" : "status_sort";
             var users = from user in _context.User
@@ -64,9 +89,17 @@ namespace server.Areas.Manager.Controllers
         }
 
 
-        // GET: Users/Details/5
+        // GET: Manager/Users/Details/5
         public async Task<IActionResult> Details(string? id)
         {
+            if (this_user == null)
+            {
+                return Redirect("/");
+            }
+            if (this_user.Role != 3)
+            {
+                return Redirect("/");
+            }
             if (id == null || _context.User == null)
             {
                 return NotFound();
@@ -82,9 +115,17 @@ namespace server.Areas.Manager.Controllers
             return View(user);
         }
 
-        // GET: User/Edit/5
+        // GET: Manager/User/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
+            if (this_user == null)
+            {
+                return Redirect("/");
+            }
+            if (this_user.Role != 3)
+            {
+                return Redirect("/");
+            }
             if (id == null || _context.User == null)
             {
                 return NotFound();
@@ -104,6 +145,14 @@ namespace server.Areas.Manager.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("Uid,Username,Role")] User user)
         {
+            if (this_user == null)
+            {
+                return Redirect("/");
+            }
+            if (this_user.Role != 3)
+            {
+                return Redirect("/");
+            }
             if (id != user.Uid)
             {
                 return NotFound();
@@ -118,6 +167,14 @@ namespace server.Areas.Manager.Controllers
         // GET: Users/Suspend/5
         public async Task<IActionResult> Suspend(string id)
         {
+            if (this_user == null)
+            {
+                return Redirect("/");
+            }
+            if (this_user.Role != 3)
+            {
+                return Redirect("/");
+            }
             if (string.IsNullOrEmpty(id))
             {
                 return NotFound();
@@ -137,6 +194,14 @@ namespace server.Areas.Manager.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> SuspendConfirmed(string id)
         {
+            if (this_user == null)
+            {
+                return Redirect("/");
+            }
+            if (this_user.Role != 3)
+            {
+                return Redirect("/");
+            }
             var user = await _context.User.FindAsync(id);
             if (user == null)
             {

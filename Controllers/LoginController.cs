@@ -61,7 +61,7 @@ namespace server.Controllers
                 }
                 else
                 {
-					return Redirect("/Manager/Users");
+                    return Redirect("/Manager/Manager/Index");
                 }
             }
 

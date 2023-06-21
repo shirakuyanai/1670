@@ -1,9 +1,11 @@
 ﻿@using server.Controllers
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     var user = ViewData["User"] as User;
     var brands = ViewData["Brands"] as List<Brand>;
     var cartItems = ViewData["CartItems"] as List<CartItem>;
+
     int count = 0;
 }
 
@@ -27,6 +29,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
     <link href="~/css/font-awesome.min.css" rel="stylesheet">
     <link href="~/css/owl.carousel.css" rel="stylesheet">
+    <link href="~/css/home.css" rel="stylesheet">
+
     
 </head>
 <body>
@@ -49,7 +53,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="header-wrapper">
             <!-- Header -->
             <div class="container">
@@ -61,14 +65,21 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="search-bg">
-                            <input type="text" class="form-control" placeholder="Search Here"/>
-                            <button type="Submit"><i class="fa fa-search"></i></button>
+                            <form asp-controller="Home" asp-action="Search" method="get" class="form-inline">
+                                <div class="form-group">
+                                    <input name="SearchProduct" required id="inputSearchAuto" class="input-search form-control form-control-sidebar rounded-pill bg-light border-0" maxlength="40" autocomplete="off" type="text" size="20" placeholder="Bạn cần tìm gì?" style="flex: 1 1 auto;">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-12">
                         <div class="account-section">
-                            @if (user != null){
-                                <ul >
+                            @if (user != null)
+                            {
+                                <ul>
                                     <li class="title"><a href="/profile">Hello @user.FirstName</a></li>
                                     <li class="title">|</li>
                                     <li class="title"><a href="/logout">Logout</a></li>
@@ -76,8 +87,9 @@
                                     <li class="title"><a href="/cart"><i class="fa fa-shopping-cart"></i>   <sup class="cart-quantity">@count</sup></a></li>
                                 </ul>
                             }
-                            else{
-                                <ul >
+                            else
+                            {
+                                <ul>
                                     <li class="title"><a href="/login">Login</a></li>
                                     <li class="title">|</li>
                                     <li class="title"><a href="/register">Register</a></li>
@@ -85,13 +97,13 @@
                                     <li class="title"><a href="/cart"><i class="fa fa-shopping-cart"></i>    <sup class="cart-quantity">@count</sup></a></li>
                                 </ul>
                             }
-                            
-                                
+
+
                         </div>
                     </div>
                 </div>
 
-                
+
             </div>
             <!-- Nav bar -->
             <div class="navigation">
@@ -108,7 +120,9 @@
                                             {
                                                 @foreach (var brand in brands)
                                                 {
-                                                    <li><a href="#">@brand.Title</a></li>
+                                                    <li>
+                                                        <a asp-area="" asp-controller="Home" asp-action="SideMenuBar" asp-route-Bid="@brand.Bid" method="get")">@brand.Title</a>
+                                                    </li>
                                                 }
                                             }
 
@@ -121,8 +135,7 @@
                 </div>
             </div>
         </div>
-
-        <div>
+           
             @RenderBody()
         </div>
 
@@ -258,8 +271,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
@@ -268,6 +279,7 @@
     <script type="text/javascript" src="~/js/sticky-header.js"></script>
     <script type="text/javascript" src="~/js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="~/js/multiple-carousel.js"></script>
+    <script type="text/javascript" src="~/js/Home.js"></script>
     <script src="https://kit.fontawesome.com/d9da25bc83.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     @await RenderSectionAsync("Scripts", required: false)

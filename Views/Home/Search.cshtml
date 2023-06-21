@@ -1,0 +1,25 @@
+﻿@model IEnumerable<server.Models.Product>
+
+@{
+    ViewData["Title"] = "SearchProduct";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Tìm kiếm </h1>
+<p class="subtext-result text-center">	Tìm kiếm theo  <strong>@ViewData["CurrentFilter"]</strong>.	<span>@Model.Count()</span> kết quả được tìm thấy.</p>
+
+
+@foreach (var product in Model)
+{
+    <div  style="display: inline-block; border: 1px solid #ccc; padding: 150px; margin: 10px; text-align: center;">
+        <a class="aspect-ratio fade-box" href="/product/@product.Pid" title="@product.Name" aria-label="@product.Name">
+            <picture class="has-hover">
+                <img src="@product.Image" style="width: 200px; height: 200px;" />
+            </picture>
+        </a>
+        <br />
+        <a href="/product/@product.Pid" title="@product.Name">@product.Name</a>
+        <br />
+        <a href="/product/@product.Pid" title="@product.Name" style="color: red">Price: @product.Price $</a>
+    </div>
+}

@@ -80,11 +80,11 @@
                     @Html.DisplayFor(modelItem => item.Status)
                 </td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@item.Uid">View Information</a>|
-
-                    <a asp-action="Edit" asp-route-id="@item.Uid">Change Role</a>|
-                    <a asp-action="Suspend" asp-route-id="@item.Uid">Suspend</a>
+                    <a href="@Url.Action("Details", "Users", new { id = item.Uid })" class="btn btn-info">View Information</a>
+                    <a href="@Url.Action("Edit", "Users", new { id = item.Uid })" class="btn btn-primary">Change Role</a>
+                    <a href="@Url.Action("Suspend", "Users", new { id = item.Uid })" class="btn btn-danger">Suspend</a>
                 </td>
+
             </tr>
         }
     </tbody>

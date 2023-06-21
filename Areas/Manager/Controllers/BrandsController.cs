@@ -7,22 +7,28 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using server.Models;
 using server.Data;
+using server.Controllers;
 
 namespace server.Areas.Manager.Controllers
 {
     [Area("Manager")]
-    public class BrandsController : Controller
+    public class BrandsController : BaseController
     {
-        private readonly serverContext _context;
-
-        public BrandsController(serverContext context)
+        public BrandsController(serverContext context, IHttpContextAccessor httpContextAccessor) : base(context, httpContextAccessor)
         {
-            _context = context;
         }
 
         // GET: Manager/Brands
         public async Task<IActionResult> Index()
         {
+            if (this_user == null)
+            {
+                return Redirect("/");
+            }
+            if (this_user.Role != 3)
+            {
+                return Redirect("/");
+            }
             return _context.Brand != null ?
                         View(await _context.Brand.ToListAsync()) :
                         Problem("Entity set 'serverContext.Brand'  is null.");
@@ -31,6 +37,14 @@ namespace server.Areas.Manager.Controllers
         // GET: Manager/Brands/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            if (this_user == null)
+            {
+                return Redirect("/");
+            }
+            if (this_user.Role != 3)
+            {
+                return Redirect("/");
+            }
             if (id == null || _context.Brand == null)
             {
                 return NotFound();
@@ -51,6 +65,14 @@ namespace server.Areas.Manager.Controllers
         // GET: Manager/Brands/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            if (this_user == null)
+            {
+                return Redirect("/");
+            }
+            if (this_user.Role != 3)
+            {
+                return Redirect("/");
+            }
             if (id == null || _context.Brand == null)
             {
                 return NotFound();
@@ -71,6 +93,14 @@ namespace server.Areas.Manager.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            if (this_user == null)
+            {
+                return Redirect("/");
+            }
+            if (this_user.Role != 3)
+            {
+                return Redirect("/");
+            }
             if (_context.Brand == null)
             {
                 return Problem("Entity set 'serverContext.Brand'  is null.");
