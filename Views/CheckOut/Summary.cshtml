@@ -1,0 +1,21 @@
+@{
+  var user = ViewData["User"] as User;
+  var msg = TempData["msg"];
+  var err = TempData["err"];
+}
+@if (err != null)
+{
+    <div class="container text-danger text-center rounded border-danger">
+        <h4>@err</h4>
+    </div>
+}
+else if (msg != null){
+    <div class="container text-success text-center rounded border-success">
+        <h4>@msg</h4>
+    </div>
+}
+else{
+    <div class="container text-danger text-center rounded border-danger">
+        <h4>Something went wrong. Please try again at a later time.</h4>
+    </div>
+}

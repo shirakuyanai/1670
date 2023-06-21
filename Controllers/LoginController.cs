@@ -27,6 +27,23 @@ namespace server.Controllers
         [Route("Login")]
         public IActionResult Index()
         {
+            if (this_user != null){
+                if (this_user.Role == 1)
+                {
+                    Console.WriteLine(this_user.Role);
+                    return RedirectToAction("Index", "Home");
+                }
+                else if (this_user.Role == 2)
+                {
+                    Console.WriteLine(this_user.Role);
+                    return Redirect("/staff/staff");
+                }
+                else
+                {
+                    return Redirect("/Manager/Manager/Index");
+                }
+            }
+            
             var message = TempData["Message"] as string;
             TempData.Remove("Message"); // Remove the message from TempData to prevent it from persisting across requests
 
@@ -39,6 +56,22 @@ namespace server.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Login(string username, string password)
         {
+            if (this_user != null){
+                if (this_user.Role == 1)
+                {
+                    Console.WriteLine(this_user.Role);
+                    return RedirectToAction("Index", "Home");
+                }
+                else if (this_user.Role == 2)
+                {
+                    Console.WriteLine(this_user.Role);
+                    return Redirect("/staff/staff");
+                }
+                else
+                {
+                    return Redirect("/Manager/Manager/Index");
+                }
+            }
             var user = _context.User.FirstOrDefault(u => u.Username == username);
             
 			if (user != null && VerifyPassword(password, user.Password))
@@ -130,7 +163,7 @@ namespace server.Controllers
         public IActionResult Logout()
         {
             HttpContext.Session.Remove("JwtToken");
-            return Redirect("/login");
+            return Redirect("/");
         }
     }
 }

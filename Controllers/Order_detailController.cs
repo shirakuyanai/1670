@@ -27,7 +27,7 @@ namespace server.Controllers
         }
 
         // GET: Order_detail/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(string? id)
         {
             if (id == null || _context.Order_detail == null)
             {
@@ -49,7 +49,7 @@ namespace server.Controllers
         // GET: Order_detail/Create
         public IActionResult Create()
         {
-            ViewData["Order_id"] = new SelectList(_context.Order, "Oder_id", "Oder_id");
+            ViewData["Order_id"] = new SelectList(_context.Order, "Order_id", "Order_id");
             ViewData["Pid"] = new SelectList(_context.Product, "Pid", "Name");
             return View();
         }
@@ -67,13 +67,13 @@ namespace server.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Order_id"] = new SelectList(_context.Order, "Oder_id", "Oder_id", order_detail.Order_id);
+            ViewData["Order_id"] = new SelectList(_context.Order, "Order_id", "Order_id", order_detail.Order_id);
             ViewData["Pid"] = new SelectList(_context.Product, "Pid", "Name", order_detail.Pid);
             return View(order_detail);
         }
 
         // GET: Order_detail/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(string? id)
         {
             if (id == null || _context.Order_detail == null)
             {
@@ -85,7 +85,7 @@ namespace server.Controllers
             {
                 return NotFound();
             }
-            ViewData["Order_id"] = new SelectList(_context.Order, "Oder_id", "Oder_id", order_detail.Order_id);
+            ViewData["Order_id"] = new SelectList(_context.Order, "Order_id", "Order_id", order_detail.Order_id);
             ViewData["Pid"] = new SelectList(_context.Product, "Pid", "Name", order_detail.Pid);
             return View(order_detail);
         }
@@ -95,7 +95,7 @@ namespace server.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Order_items_id,Order_id,Pid,quantity,total")] Order_detail order_detail)
+        public async Task<IActionResult> Edit(string id, [Bind("Order_items_id,Order_id,Pid,quantity,total")] Order_detail order_detail)
         {
             if (id != order_detail.Order_items_id)
             {
@@ -122,13 +122,13 @@ namespace server.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Order_id"] = new SelectList(_context.Order, "Oder_id", "Oder_id", order_detail.Order_id);
+            ViewData["Order_id"] = new SelectList(_context.Order, "Order_id", "Order_id", order_detail.Order_id);
             ViewData["Pid"] = new SelectList(_context.Product, "Pid", "Name", order_detail.Pid);
             return View(order_detail);
         }
 
         // GET: Order_detail/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(string? id)
         {
             if (id == null || _context.Order_detail == null)
             {
@@ -150,7 +150,7 @@ namespace server.Controllers
         // POST: Order_detail/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
             if (_context.Order_detail == null)
             {
@@ -166,7 +166,7 @@ namespace server.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool Order_detailExists(int id)
+        private bool Order_detailExists(string id)
         {
           return (_context.Order_detail?.Any(e => e.Order_items_id == id)).GetValueOrDefault();
         }

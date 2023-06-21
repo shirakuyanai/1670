@@ -1,104 +1,177 @@
 @model CartViewModel
 
 @{
+  ViewData["Title"] = "Check Out";
+  var addresses = ViewData["Addresses"] as List<Address>;
   var user = ViewData["User"] as User;
   double subtotal = 0;
-  @if (Model.CartItems.Count > 0)
+  if (Model.CartItems.Count > 0)
   {
-    @foreach (var item in Model.CartItems){
+    foreach (var item in Model.CartItems){
       subtotal += item.Total;
     }
   }
 }
 
 @if (user != null)
-  {
+{
     <html>
-  <head>
-    <link src="~/css/checkoutstyle.css">
-  </head>
-  <body>
-    <section class="h-100 h-custom">
-      <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-12">
-            <div class="card card-registration card-registration-2" style="border-radius: 15px;">
-              <div class="card-body p-0">
-                <div class="row g-0">
-                  <div class="col-lg-8">
-                    <div class="p-5">
-                      <div class="d-flex justify-content-between align-items-center mb-5">
-                        <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
-                        <h6 class="mb-0 text-muted">3 items</h6>
-                      </div>
-                      <hr class="my-4">
-                      @if (Model.CartItems.Count > 0)
-                      {
-                        @foreach (var item in Model.CartItems){
-                          <div class="row mb-4 d-flex justify-content-between align-items-center">
-                            <div class="col-md-2 col-lg-2 col-xl-2">
-                              <img
-                                src="@item.Image"
-                                class="img-fluid rounded-3">
-                            </div>
-                            <div class="col-md-3 col-lg-3 col-xl-3">
-                              <h6 class="text-black mb-0">@item.ProductName</h6>
-                            </div>
-                            <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                              @item.Quantity
-                            </div>
-                            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                              <h6 class="mb-0">$@item.Total</h6>
-                            </div>
-                            <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                              <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
-                            </div>
-                          </div>
-                        }
-                      }
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css">
+        <style>
+            body {
+                font-family: 'Roboto', sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="h-100 h-custom">
+            <form method="post" action="/CheckOut/ProcessOrder" class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12">
+                        <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                            <div class="card-body p-0">
+                                <div class="row g-0">
+                                    <div class="col-lg-8">
+                                        <div class="p-5">
+                                            <div class="d-flex justify-content-between align-items-center mb-5">
+                                                <h1 class="fw-bold mb-0 text-black">Order Preview</h1>
+                                                <h6 class="mb-0 text-muted">@Model.CartItems.Count item(s)</h6>
+                                            </div>
+                                            <h2><b>Items</b></h2>
+                                            <div class="items">
+                                                @if (Model.CartItems.Count > 0)
+                                                {
+                                                    @foreach (var item in Model.CartItems){
+                                                        <div class="row mb-4 d-flex justify-content-between align-items-center">
+                                                            <div class="col-md-2 col-lg-2 col-xl-2">
+                                                                <img src="@item.Image" class="img-fluid rounded-3">
+                                                            </div>
+                                                            <div class="col-md-3 col-lg-3 col-xl-3">
+                                                                <h6 class="text-black mb-0">@item.ProductName</h6>
+                                                            </div>
+                                                            <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                                                                @item.Quantity
+                                                            </div>
+                                                            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                                                <h6 class="mb-0">$@item.Total</h6>
+                                                            </div>
+                                                            <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                                                <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    }
+                                                }
+                                            </div>
+                                            <h2><b>Address</b></h2>
+                                            <div>
+                                                <select id="addressSelect" class="form-select" aria-label="Address" onchange="handleAddressSelection(this)">
+                                                    <option value="new" selected>Choose an address</option>
+                                                    @foreach (var address in addresses){
+                                                        <option value="@address.Address_id">@address.Ward, @address.Town, @address.District, @address.City</option>
+                                                    }
+                                                    <option value="new">----- New address</option>
+                                                </select>
 
-                      <div class="pt-5">
-                        <h6 class="mb-0"><a href="#!" class="text-body"><i
-                              class="fas fa-long-arrow-alt-left me-2"></i>Back to shop</a></h6>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 bg-grey">
-                    <div class="p-5">
-                      <h3 class="fw-bold mb-5 mt-2 pt-1">Summary</h3>
-                      <hr class="my-4">
+                                                <div>
+                                                    <input hidden type="text" value="@user.Uid" name="Uid">
+                                                    <input hidden type="text" value="" id="Address_id" name="Address_id">
+                                                    <input required type="text" class="rounded col-5 border border-dark mt-3 w-100" value="" placeholder="Ward" id="Ward" name="Ward">
+                                                    <input required type="text" class="rounded col-5 border border-dark mt-3 w-100" value="" placeholder="Town" id="Town" name="Town">
+                                                    <input required type="text" class="rounded col-5 border border-dark mt-3 w-100" value="" placeholder="District" id="District" name="District">
+                                                    <input required type="text" class="rounded col-5 border border-dark mt-3 w-100" value="" placeholder="City" id="City" name="City">
+                                                    <input required type="text" class="rounded col-5 border border-dark mt-3 w-100" value="" placeholder="Zipcode" id="Zipcode" name="Zipcode">
+                                                </div>
 
-                      @foreach (var item in Model.CartItems){
-                        <div class="d-flex justify-content-between mb-4">
-                          <h5 class="text-uppercase">@item.ProductName</h5>
-                          <h5>$@item.Total</h5>
+                                            </div>
+                                            <div class="pt-5">
+                                                <h6 class="mb-0"><a href="/" class="text-body"><i class="fas fa-long-arrow-alt-left me-2"></i>Back to shop</a></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 bg-grey">
+                                        <div class="p-5">
+                                            <h3 class="fw-bold mb-5 mt-2 pt-1">Summary</h3>
+                                            <hr class="my-4">
+
+                                            @foreach (var item in Model.CartItems){
+                                                <div class="d-flex justify-content-between mb-4">
+                                                    <h5 class="text-uppercase">@item.ProductName</h5>
+                                                    <h5>$@item.Total</h5>
+                                                </div>
+                                            }
+                                            <hr class="my-4">
+
+                                            <div class="d-flex justify-content-between mb-5">
+                                                <h5 class="text-uppercase">Total price</h5>
+                                                <h5>$@subtotal</h5>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark">Finish</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                      }
-
-
-
-                      <hr class="my-4">
-
-                      <div class="d-flex justify-content-between mb-5">
-                        <h5 class="text-uppercase">Total price</h5>
-                        <h5>$@subtotal</h5>
-                      </div>
-
-                      <button type="button" class="btn btn-dark btn-block btn-lg"
-                        data-mdb-ripple-color="dark">Finish</button>
-
                     </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </body>
-</html>
-  }
+            </form>
+        </section>
+        <script>
+    function handleAddressSelection(selectElement) {
+      var selectedOption = selectElement.options[selectElement.selectedIndex];
+      var selectedValue = selectedOption.value;
+      var selectedText = selectedOption.text;
+
+      if (selectedValue === "new") {
+        document.getElementById("Address_id").value = '';
+        document.getElementById("Ward").value = '';
+        document.getElementById("Town").value = '';
+        document.getElementById("District").value = '';
+        document.getElementById("City").value = '';
+        document.getElementById("Zipcode").value = '';
+      } else {
+        getAddressById(selectedValue);
+      }
+    }
+
+    function getAddressById(addressId) {
+      var url = `/Address/${addressId}`;
+
+      fetch(url)
+        .then(response => {
+          if (response.ok) {
+            return response.json(); // Parse the response body as JSON
+          } else {
+            throw new Error('Error: ' + response.status);
+          }
+        })
+        .then(data => {
+          // Handle the data here
+          if (data) {
+            document.getElementById("Address_id").value = data.address_id;
+            document.getElementById("Ward").value = data.ward;
+            document.getElementById("Town").value = data.town;
+            document.getElementById("District").value = data.district;
+            document.getElementById("City").value = data.city;
+            document.getElementById("Zipcode").value = data.zipcode;
+          }
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js" integrity="sha512-t+ZQc8kZbKGNMc8mHmdePycJ6Q/QakWHxHiAVll9th2UOCb0r1jpPL0ek0WYEn3U1cV6DfgaMvkoYJuEQd7KEw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </body>
+    </html>
+}
+
 else{
   <script>
       window.location.href = '/';

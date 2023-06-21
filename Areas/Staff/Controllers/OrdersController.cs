@@ -28,7 +28,7 @@ namespace server.Areas.Staff.Controllers
         }
 
         // GET: Staff/Orders/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(string? id)
         {
             if (id == null || _context.Order == null)
             {
@@ -38,7 +38,7 @@ namespace server.Areas.Staff.Controllers
             var order = await _context.Order
                 .Include(o => o.Address)
                 .Include(o => o.User)
-                .FirstOrDefaultAsync(m => m.Oder_id == id);
+                .FirstOrDefaultAsync(m => m.Order_id == id);
             if (order == null)
             {
                 return NotFound();
@@ -60,7 +60,7 @@ namespace server.Areas.Staff.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Oder_id,Uid,Address_id,Created_at,Updated_at,Status,Total")] Order order)
+        public async Task<IActionResult> Create([Bind("Order_id,Uid,Address_id,Created_at,Updated_at,Status,Total")] Order order)
         {
                 _context.Add(order);
                 await _context.SaveChangesAsync();
@@ -68,7 +68,7 @@ namespace server.Areas.Staff.Controllers
         }
 
         // GET: Staff/Orders/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(string? id)
         {
             if (id == null || _context.Order == null)
             {
@@ -90,18 +90,18 @@ namespace server.Areas.Staff.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Oder_id,Updated_at,Status")] Order order)
+        public async Task<IActionResult> Edit(string id, [Bind("Order_id,Updated_at,Status")] Order order)
         {
 
             if (order.Status != null)
             {
                 try
                 {
-                    var foundOrder = _context.Order.AsNoTracking().FirstOrDefault(o => o.Oder_id == order.Oder_id);
+                    var foundOrder = _context.Order.AsNoTracking().FirstOrDefault(o => o.Order_id == order.Order_id);
                     order.Address_id = foundOrder.Address_id;
                     order.Uid = foundOrder.Uid;
                     order.Created_at = foundOrder.Created_at;
-                    order.Updated_at = DateTime.Now.ToString();
+                    order.Updated_at = DateTime.Now;
                     order.Total = foundOrder.Total;
 
                     _context.Update(order);
@@ -109,7 +109,7 @@ namespace server.Areas.Staff.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!OrderExists(order.Oder_id))
+                    if (!OrderExists(order.Order_id))
                     {
                         return NotFound();
                     }
@@ -124,7 +124,7 @@ namespace server.Areas.Staff.Controllers
         }
 
         // GET: Staff/Orders/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(string? id)
         {
             if (id == null || _context.Order == null)
             {
@@ -134,7 +134,7 @@ namespace server.Areas.Staff.Controllers
             var order = await _context.Order
                 .Include(o => o.Address)
                 .Include(o => o.User)
-                .FirstOrDefaultAsync(m => m.Oder_id == id);
+                .FirstOrDefaultAsync(m => m.Order_id == id);
             if (order == null)
             {
                 return NotFound();
@@ -146,7 +146,7 @@ namespace server.Areas.Staff.Controllers
         // POST: Staff/Orders/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
             if (_context.Order == null)
             {
@@ -162,9 +162,9 @@ namespace server.Areas.Staff.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool OrderExists(int id)
+        private bool OrderExists(string id)
         {
-          return (_context.Order?.Any(e => e.Oder_id == id)).GetValueOrDefault();
+          return (_context.Order?.Any(e => e.Order_id == id)).GetValueOrDefault();
         }
     }
 }

@@ -8,19 +8,28 @@ namespace server.Models
     public class Order
     {
         [Key]
-        public int Oder_id { get; set; }
+        public string Order_id { get; set; }
 
         [ForeignKey("User")]
         public string Uid { get; set; }
         public User User { get; set; }
 
         [ForeignKey("Address")]
-        public int Address_id { get; set; }
+        public string Address_id { get; set; }
         public Address Address { get; set; }
 
-        public string Created_at { get; set; }
-        public string Updated_at { get; set; }
-        public string Status { get; set; }
-        public int Total { get; set; }
+        public DateTime Created_at { get; set; }
+        public DateTime Updated_at { get; set; }
+        public int Status { get; set; }
+        public double Total { get; set; }
+
+    public Order(){
+        Order_id = Guid.NewGuid().ToString();
+        Created_at = DateTime.Now;
+        Updated_at = DateTime.MinValue;
+        Status = 0;
+        Total = 0;
+    }
+        
     }
 }

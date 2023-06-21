@@ -27,7 +27,7 @@ namespace server.Controllers
         }
 
         // GET: Addresses/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(string? id)
         {
             if (id == null || _context.Address == null)
             {
@@ -67,7 +67,7 @@ namespace server.Controllers
         }
 
         // GET: Addresses/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(string? id)
         {
             if (id == null || _context.Address == null)
             {
@@ -88,7 +88,7 @@ namespace server.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Address_id,Uid,Ward,Town,District,City,Zipcode")] Address address)
+        public async Task<IActionResult> Edit(string id, [Bind("Address_id,Uid,Ward,Town,District,City,Zipcode")] Address address)
         {
             if (id != address.Address_id)
             {
@@ -120,7 +120,7 @@ namespace server.Controllers
         }
 
         // GET: Addresses/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(string? id)
         {
             if (id == null || _context.Address == null)
             {
@@ -141,7 +141,7 @@ namespace server.Controllers
         // POST: Addresses/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
             if (_context.Address == null)
             {
@@ -157,7 +157,7 @@ namespace server.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool AddressExists(int id)
+        private bool AddressExists(string id)
         {
           return (_context.Address?.Any(e => e.Address_id == id)).GetValueOrDefault();
         }

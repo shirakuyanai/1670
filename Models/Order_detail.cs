@@ -6,10 +6,10 @@ namespace server.Models
     public class Order_detail
     {
         [Key]
-        public int Order_items_id { get; set; }
+        public string Order_items_id { get; set; }
 
         [ForeignKey("Order")]
-        public int Order_id { get; set; }
+        public string Order_id { get; set; }
         public Order Order { get; set; }
 
 
@@ -18,7 +18,10 @@ namespace server.Models
         public int Pid { get; set; }
         public Product Product { get; set; }
 
-        public int quantity { get; set; }
-        public int total { get; set; }
+        public double quantity { get; set; }
+        public double total { get; set; }
+        public Order_detail(){
+            Order_items_id = Guid.NewGuid().ToString();
+        }
     }
 }

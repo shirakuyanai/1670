@@ -6,7 +6,7 @@ namespace server.Models
     public class Address
     {
         [Key]
-        public int Address_id { get; set; }
+        public string Address_id { get; set; }
 
         [ForeignKey("User")]
         public string Uid { get; set; }
