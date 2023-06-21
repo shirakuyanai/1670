@@ -37,14 +37,15 @@ namespace server.Controllers
         [Route("/product/{id}")]
         public async Task<IActionResult> Product(int id)
         {
-            var brands = _context.Brand.ToList();
+			ViewData["User"] = this_user;
+			var brands = _context.Brand.ToList();
             ViewData["Brands"] = brands;
-            var product = _context.Product.FirstOrDefault(p => p.Pid == id);
-            //product.viewCount++;
-            ViewData["Product"] = _context.Product.FirstOrDefault(p => p.Pid == id);
-            //await _context.SaveChangesAsync();
-            return View();
-        }
+			var product = _context.Product.FirstOrDefault(p => p.Pid == id);
+			product.viewCount++;
+			ViewData["Product"] = _context.Product.FirstOrDefault(p => p.Pid == id);
+			await _context.SaveChangesAsync();
+			return View();
+		}
 
         
 
@@ -65,6 +66,7 @@ namespace server.Controllers
         // GET: Home/Search
         public async Task<IActionResult> Search(string SearchProduct)
         {
+            ViewData["User"] = this_user;
             var brands = _context.Brand.ToList();
             ViewData["Brands"] = brands;
             ViewData["CurrentFilter"] = SearchProduct;
@@ -82,6 +84,7 @@ namespace server.Controllers
         // GET: Home/SideMenuBar
         public IActionResult SideMenuBar(int? Bid)
         {
+            ViewData["User"] = this_user;
             var brands = _context.Brand.ToList();
             ViewData["Brands"] = brands;
             var products = _context.Product.ToList();

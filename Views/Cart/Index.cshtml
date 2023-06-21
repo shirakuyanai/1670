@@ -1,49 +1,55 @@
-﻿
-@model CartViewModel
+﻿@model CartViewModel
+@using server.Controllers
 
 @{
-    ViewData["Title"] = "Cart Overview";
+	ViewData["Title"] = "Cart Overview";
+	var user = ViewData["User"];
+	var brands = ViewData["Brands"];
 }
 
 @if (Model.CartItems.Count > 0)
 {
-    <table class="table">
-        <tr>
-            <th>Product</th>
-            <th>Quantity</th>
-            <th></th>
-            <th>Price</th>
-            <th>Total</th>
-        </tr>
-        @foreach (var item in Model.CartItems)
-        {
-            <tr>
-                <td>@item.ProductName</td>
-                <td>@item.Quantity</td>
-                <td>
-                    <a class="btn btn-primary btn-sm" asp-action="Add" asp-route-id="@item.ProductId">+</a>
-                    <a class="btn btn-info btn-sm" asp-action="Decrease" asp-route-id="@item.ProductId">-</a>
-                    <a class="btn btn-danger btn-sm" asp-action="Remove" asp-route-id="@item.ProductId">Remove</a>
-                </td>
-                <td>@item.Price.ToString("C2")</td>
-                <td>@Model.CartItems.Where(x => x.ProductId == item.ProductId).Sum(x => x.Quantity * x.Price).ToString("C2")</td>
-            </tr>
-        }
-        <tr>
-            <td class="text-right" colspan="4">Grand Total: @Model.GrandTotal.ToString("C2")</td>
-        </tr>
-        <tr>
-            <td class="text-right" colspan="4">
-                <a class="btn btn-danger" asp-action="Clear">Clear Cart</a>
-                <a class="btn btn-primary" href="#">Checkout</a>
-            </td>
-        </tr>
-    </table>
+	<div class="container">
+		<table class="table">
+			<tr>
+				<th class="text-center">Product</th>
+				<th class="text-center"></th>
+				<th class="text-center">Quantity</th>
+				<th class="text-center">Actions</th>
+				<th class="text-center">Price</th>
+				<th class="text-center">Total</th>
+			</tr>
+			@foreach (var item in Model.CartItems)
+			{
+				<tr>
+					<td class="text-center align-middle">@item.ProductName</td>
+					<td class="text-center align-middle"><img src="@item.Image" style="width: 100px; height: 100px;"></td>
+					<td class="text-center align-middle">@item.Quantity</td>
+					<td class="text-center align-middle">
+						<a class="btn btn-info btn-sm" asp-action="Add" asp-route-id="@item.ProductId">+</a>
+						<a class="btn btn-dark btn-sm" asp-action="Decrease" asp-route-id="@item.ProductId">-</a>
+						<a class="btn btn-danger btn-sm" asp-action="Remove" asp-route-id="@item.ProductId">Remove</a>
+					</td>
+					<td class="text-center align-middle">@item.Price.ToString("C2")</td>
+					<td class="text-center align-middle">@Model.CartItems.Where(x => x.ProductId == item.ProductId).Sum(x => x.Quantity * x.Price).ToString("C2")</td>
+				</tr>
+			}
 
+		</table>
+		<div class="text-center">
+			<h1 class="text-right">Grand Total: @Model.GrandTotal.ToString("C2")</h1>
+		</div>
+		<br>
+		<div class ="text-center">
+				<a class="btn btn-danger" asp-action="Clear">Clear Cart</a>
+				<a class="btn btn-primary" href="#">Checkout</a>
+		</div>
+		<br>
+	</div>
 
 }
 else
 {
-    <h3 class="display-4 text-center">Your cart is empty.</h3>
+	<div class="mt-5 mb-5"><h2 class="display-4 text-center">Your cart is empty.</h2></div>
 }
 

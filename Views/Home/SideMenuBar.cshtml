@@ -5,20 +5,48 @@
     Layout = "/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Tìm kiếm</h1>
-<p class="subtext-result text-center">Tìm kiếm theo Brand. <span>@Model.Count()</span> kết quả được tìm thấy.</p>
+<h1 class="text-center">Searched</h1>
+<p class="subtext-result text-center">Brand filtering. <span>@Model.Count()</span> products has been found</p>
 
-@foreach (var product in Model)
-{
-    <div style="display: inline-block; border: 1px solid #ccc; padding: 150px; margin: 10px; text-align: center;">
-        <a class="aspect-ratio fade-box" href="/product/@product.Pid" title="@product.Name" aria-label="@product.Name">
-            <picture class="has-hover">
-                <img src="@product.Image" style="width: 200px; height: 200px;" />
-            </picture>
-        </a>
-        <br />
-        <a href="/product/@product.Pid" title="@product.Name">@product.Name</a>
-        <br />
-        <a href="/product/@product.Pid" title="@product.Name" style="color: red">Price: @product.Price $</a>
-    </div>
-}
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="box">
+				<div class="box-head">
+					<h3 class="head-title">All Products</h3>
+				</div>
+				<div class="box-body">
+					<div class="row">
+						<!-- product -->
+						@if (Model != null)
+						{
+							@foreach (var product in Model)
+							{
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+									<div class="product-block">
+										<div class="product-img"><a href="/product/@product.Pid"><img src="@product.Image" alt=""></a></div>
+										<div class="product-content">
+											<h5><a href="#" class="product-title">@product.Name <strong>(@product.Brand.Title)</strong></a></h5>
+											<div class="product-meta">
+												<a href="#" class="product-price">@product.Price$</a>
+											</div>
+											<div class="shopping-btn">
+												<a asp-area="" asp-controller="Cart" asp-action="Add" asp-route-id="@product.Pid" class="nav-link" class="product-btn btn-cart"><i class="fa fa-shopping-cart"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							}
+						}
+						@if (TempData["Success"] != null)
+						{
+							<script>
+								alert('@TempData["Success"]');
+							</script>
+						}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

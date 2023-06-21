@@ -6,15 +6,17 @@ using server.Models.ViewModels;
 
 namespace server.Controllers
 {
-	public class CartController : Controller
+	public class CartController : BaseController
 	{
-		private readonly serverContext _context;
-		public CartController(serverContext context)
+		public CartController(serverContext context, IHttpContextAccessor httpContextAccessor, EmailSender emailSender) : base(context, httpContextAccessor)
 		{
-			_context = context;
+
 		}
 		public IActionResult Index()
 		{
+			ViewData["User"] = this_user;
+			var brands = _context.Brand.ToList();
+			ViewData["Brands"] = brands;
 			List<CartItem> cart;
 			if (HttpContext.Session.GetJson<List<CartItem>>("Cart") != null)
 			{
