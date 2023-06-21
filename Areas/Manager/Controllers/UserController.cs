@@ -115,7 +115,7 @@ namespace server.Areas.Manager.Controllers
             return View(user);
         }
 
-        // GET: Manager/User/Edit/5
+        // GET: Manager/Users/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
             if (this_user == null)
@@ -126,7 +126,8 @@ namespace server.Areas.Manager.Controllers
             {
                 return Redirect("/");
             }
-            if (id == null || _context.User == null)
+			ViewData["User"] = this_user;
+			if (id == null || _context.User == null)
             {
                 return NotFound();
             }
@@ -136,14 +137,13 @@ namespace server.Areas.Manager.Controllers
             {
                 return NotFound();
             }
-            ViewData["Uid"] = new SelectList(_context.User, "Uid", "Uid", user.Uid);
             return View(user);
         }
 
-        // POST: Manager/User/Edit/5
+        // POST: Manager/Users/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Uid,Username,Role")] User user)
+        public async Task<IActionResult> Edit(string id, [Bind("Uid,Username,Role,Email")] User user)
         {
             if (this_user == null)
             {
@@ -158,10 +158,25 @@ namespace server.Areas.Manager.Controllers
                 return NotFound();
             }
 
-            ViewData["Uid"] = new SelectList(_context.User, "Uid", "Uid", user.Uid);
-            return View(user);
+            // Retrieve the existing user from the database
+            var existingUser = await _context.User.FindAsync(id);
+            if (existingUser == null)
+            {
+                return NotFound();
+            }
+
+            // Update the properties of the existing user
+            existingUser.Username = user.Username;
+            existingUser.Role = user.Role;
+            existingUser.Email = user.Email; // Make sure to set the email property
+
+            _context.Update(existingUser);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
+
+        //Uid,Username,Password,Email,Firstname,LastName,Phone,Role,Status,Verifed
 
 
         // GET: Users/Suspend/5
