@@ -62,6 +62,7 @@ namespace server.Models
 
         public User()
         {
+            Uid = Guid.NewGuid().ToString();
             Role = 1;
             // 1: Customer
             // 2: Staff

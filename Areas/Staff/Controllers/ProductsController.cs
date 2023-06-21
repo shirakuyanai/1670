@@ -73,14 +73,14 @@ namespace server.Areas.Staff.Controllers
             {
                 // Lưu trữ tệp ảnh vào thư mục hoặc cơ sở dữ liệu tùy theo yêu cầu của bạn.
                 // lưu trữ tệp ảnh trong thư mục 'wwwroot/images'
-                var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", image.FileName);
+                var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "Product", image.FileName);
                 using (var stream = new FileStream(imagePath, FileMode.Create))
                 {
                     await image.CopyToAsync(stream);
                 }
 
                 // Lưu đường dẫn tệp ảnh vào thuộc tính 'Image' của đối tượng 'Product'
-                product.Image = "/images/" + image.FileName;
+                product.Image = "/images/Product/" + image.FileName;
             }
             _context.Add(product);
             await _context.SaveChangesAsync();
@@ -138,14 +138,14 @@ namespace server.Areas.Staff.Controllers
                     {
                         // Lưu trữ tệp ảnh vào thư mục hoặc cơ sở dữ liệu tùy theo yêu cầu của bạn.
                         // lưu trữ tệp ảnh trong thư mục 'wwwroot/images'
-                        var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", image.FileName);
+                        var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "Product", image.FileName);
                         using (var stream = new FileStream(imagePath, FileMode.Create))
                         {
                             await image.CopyToAsync(stream);
                         }
 
                         // Lưu đường dẫn tệp ảnh vào thuộc tính 'Image' của đối tượng 'Product'
-                        product.Image = "/images/" + image.FileName;
+                        product.Image = "/images/Product/" + image.FileName;
                     }
                     else
                     {

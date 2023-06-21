@@ -8237,6 +8237,146 @@
       "PackagePath": "staticwebassets\\images\\PC gaming5.png"
     },
     {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\acer1.png",
+      "PackagePath": "staticwebassets\\images\\Product\\acer1.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\acer2.png",
+      "PackagePath": "staticwebassets\\images\\Product\\acer2.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\acer3.png",
+      "PackagePath": "staticwebassets\\images\\Product\\acer3.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\acer4.png",
+      "PackagePath": "staticwebassets\\images\\Product\\acer4.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\acer5.png",
+      "PackagePath": "staticwebassets\\images\\Product\\acer5.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\asus1.png",
+      "PackagePath": "staticwebassets\\images\\Product\\asus1.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\asus2.png",
+      "PackagePath": "staticwebassets\\images\\Product\\asus2.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\asus3.png",
+      "PackagePath": "staticwebassets\\images\\Product\\asus3.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\asus4.png",
+      "PackagePath": "staticwebassets\\images\\Product\\asus4.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\asus5.png",
+      "PackagePath": "staticwebassets\\images\\Product\\asus5.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\dell1.png",
+      "PackagePath": "staticwebassets\\images\\Product\\dell1.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\dell2.png",
+      "PackagePath": "staticwebassets\\images\\Product\\dell2.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\dell3.png",
+      "PackagePath": "staticwebassets\\images\\Product\\dell3.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\dell4.png",
+      "PackagePath": "staticwebassets\\images\\Product\\dell4.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\dell5.png",
+      "PackagePath": "staticwebassets\\images\\Product\\dell5.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\hp1.png",
+      "PackagePath": "staticwebassets\\images\\Product\\hp1.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\hp2.png",
+      "PackagePath": "staticwebassets\\images\\Product\\hp2.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\hp3.png",
+      "PackagePath": "staticwebassets\\images\\Product\\hp3.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\hp4.png",
+      "PackagePath": "staticwebassets\\images\\Product\\hp4.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\hp5.png",
+      "PackagePath": "staticwebassets\\images\\Product\\hp5.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\lenovo1.png",
+      "PackagePath": "staticwebassets\\images\\Product\\lenovo1.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\lenovo2.png",
+      "PackagePath": "staticwebassets\\images\\Product\\lenovo2.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\lenovo3.png",
+      "PackagePath": "staticwebassets\\images\\Product\\lenovo3.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\lenovo4.png",
+      "PackagePath": "staticwebassets\\images\\Product\\lenovo4.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\lenovo5.png",
+      "PackagePath": "staticwebassets\\images\\Product\\lenovo5.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\mac1.png",
+      "PackagePath": "staticwebassets\\images\\Product\\mac1.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\mac2.png",
+      "PackagePath": "staticwebassets\\images\\Product\\mac2.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\mac3.png",
+      "PackagePath": "staticwebassets\\images\\Product\\mac3.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\mac4.png",
+      "PackagePath": "staticwebassets\\images\\Product\\mac4.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\mac5.png",
+      "PackagePath": "staticwebassets\\images\\Product\\mac5.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\msi1.png",
+      "PackagePath": "staticwebassets\\images\\Product\\msi1.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\msi2.png",
+      "PackagePath": "staticwebassets\\images\\Product\\msi2.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\msi3.png",
+      "PackagePath": "staticwebassets\\images\\Product\\msi3.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\msi4.png",
+      "PackagePath": "staticwebassets\\images\\Product\\msi4.png"
+    },
+    {
+      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Product\\msi5.png",
+      "PackagePath": "staticwebassets\\images\\Product\\msi5.png"
+    },
+    {
       "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\Screen4.png",
       "PackagePath": "staticwebassets\\images\\Screen4.png"
     },
@@ -8439,26 +8579,6 @@
     {
       "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\product_img_8.png",
       "PackagePath": "staticwebassets\\images\\product_img_8.png"
-    },
-    {
-      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\products\\prod-1.jpg",
-      "PackagePath": "staticwebassets\\images\\products\\prod-1.jpg"
-    },
-    {
-      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\products\\prod-2.jpg",
-      "PackagePath": "staticwebassets\\images\\products\\prod-2.jpg"
-    },
-    {
-      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\products\\prod-3.jpg",
-      "PackagePath": "staticwebassets\\images\\products\\prod-3.jpg"
-    },
-    {
-      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\products\\prod-4.jpg",
-      "PackagePath": "staticwebassets\\images\\products\\prod-4.jpg"
-    },
-    {
-      "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\products\\prod-5.jpg",
-      "PackagePath": "staticwebassets\\images\\products\\prod-5.jpg"
     },
     {
       "Id": "D:\\1670-Application dev\\Code-asm\\Final\\code\\1670-main\\wwwroot\\images\\related_post_1.jpg",
