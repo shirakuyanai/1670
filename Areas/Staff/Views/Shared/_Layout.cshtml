@@ -19,7 +19,8 @@
 	<link rel="stylesheet" href="~/Staff/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
 	<!-- Theme style -->
 	<link rel="stylesheet" href="~/Staff/dist/css/adminlte.min.css">
-	<script src="https://kit.fontawesome.com/da8cf7b003.js" crossorigin="anonymous"></script>
+	<script src="~/Staff/https://kit.fontawesome.com/da8cf7b003.js" crossorigin="anonymous"></script>
+	
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 	<div class="wrapper">
@@ -178,9 +179,10 @@
 		</footer>
 	</div>
 	<!-- ./wrapper -->
+
 	<!-- REQUIRED SCRIPTS -->
 	<!-- jQuery -->
-	<script src="~/Staff/plugins/jquery/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 	<!-- Bootstrap -->
 	<script src="~/Staff/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<!-- overlayScrollbars -->
@@ -196,5 +198,11 @@
 	<script src="~/Staff/plugins/jquery-mapael/maps/usa_states.min.js"></script>
 	<!-- ChartJS -->
 	<script src="~/Staff/plugins/chart.js/Chart.min.js"></script>
+
+	<!-- AdminLTE for demo purposes -->
+	<script src="~/Staff/dist/js/demo.js"></script>
+	<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+	<script src="~/Staff/dist/js/pages/dashboard2.js"></script>
+	@RenderSection("Scripts", required: false)
 </body>
 </html>

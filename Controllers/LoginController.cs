@@ -30,12 +30,12 @@ namespace server.Controllers
             if (this_user != null){
                 if (this_user.Role == 1)
                 {
-                    Console.WriteLine(this_user.Role);
+                    
                     return RedirectToAction("Index", "Home");
                 }
                 else if (this_user.Role == 2)
                 {
-                    Console.WriteLine(this_user.Role);
+                    
                     return Redirect("/staff/staff");
                 }
                 else
@@ -59,12 +59,12 @@ namespace server.Controllers
             if (this_user != null){
                 if (this_user.Role == 1)
                 {
-                    Console.WriteLine(this_user.Role);
+                    
                     return RedirectToAction("Index", "Home");
                 }
                 else if (this_user.Role == 2)
                 {
-                    Console.WriteLine(this_user.Role);
+                    
                     return Redirect("/staff/staff");
                 }
                 else
@@ -84,12 +84,12 @@ namespace server.Controllers
 
                 if (user.Role == 1)
                 {
-					Console.WriteLine(user.Role);
+					
 					return RedirectToAction("Index", "Home");
                 }
                 else if (user.Role == 2)
                 {
-					Console.WriteLine(user.Role);
+					
 					return Redirect("/staff/staff");
                 }
                 else

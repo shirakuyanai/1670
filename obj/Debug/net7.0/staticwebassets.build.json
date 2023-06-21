@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MKomxuGYtrqamaDvbl8smj69cAVEf0ryEDkxwnwPOVg=",
+  "Hash": "r7pljN1GSG2Db7DzodRPSpqp3UrEJPlzzK8f8ZJogGQ=",
   "Source": "server",
   "BasePath": "_content/server",
   "Mode": "Default",
@@ -3381,6 +3381,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Identity": "/Volumes/Data/University/1670/wwwroot/Staff/dist/.DS_Store",
+      "SourceId": "server",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Volumes/Data/University/1670/wwwroot/",
+      "BasePath": "_content/server",
+      "RelativePath": "Staff/dist/.DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Staff/dist/.DS_Store"
     },
     {
       "Identity": "/Volumes/Data/University/1670/wwwroot/Staff/dist/css/adminlte.css",

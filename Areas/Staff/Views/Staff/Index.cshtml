@@ -1,5 +1,5 @@
-﻿@model IEnumerable<server.Models.Order>
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using server.Models
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Staff/Views/Shared/_Layout.cshtml";
@@ -97,7 +97,7 @@
                                 <div class="chart">
                                     <div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
                                     <!-- Sales Chart Canvas -->
-                                    <canvas id="salesChart" height="225" style="height: 180px; display: block; width: 709px;" width="886" class="chartjs-render-monitor"></canvas>
+                                    <canvas id="chart" height="225" style="height: 180px; display: block; width: 709px;" width="886" class="chartjs-render-monitor"></canvas>
                                 </div>
                                 <!-- /.chart-responsive -->
                             </div>
@@ -189,3 +189,26 @@
     </div><!--/. container-fluid -->
 </section>
 
+@section Scripts {
+    <script>
+        var chartData = @Html.Raw(Json.Serialize(Model));
+
+        var ctx = document.getElementById("chart").getContext("2d");
+        var chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: chartData.Labels,
+                datasets: [{
+                    label: 'My Dataset',
+                    data: chartData.Data,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                // Configure your chart options here
+            }
+        });
+    </script>
+}

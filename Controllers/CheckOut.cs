@@ -89,7 +89,6 @@ namespace server.Controllers
 					_context.Add(address);
 					await _context.SaveChangesAsync();
 				}
-				Console.WriteLine("LOL");
 
 				Order order = new Order();
 
@@ -110,6 +109,10 @@ namespace server.Controllers
 					detail.quantity = item.Quantity;
 					detail.total = item.Total;
 					order.Total += item.Total;
+					var product = _context.Product.FirstOrDefault(p => p.Pid == item.ProductId);
+					if (product != null){
+						product.Stock -= item.Quantity;
+					}
 					_context.Add(detail);
 					await _context.SaveChangesAsync();
 				}

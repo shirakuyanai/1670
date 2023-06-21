@@ -6,6 +6,13 @@ using server.Models;
 
 namespace server.Areas.Staff.Controllers
 {
+    public class ChartData
+    {
+        public string[] Labels { get; set; }
+        public int[] Data { get; set; }
+    }
+
+
 	[Area("Staff")]
 	public class StaffController : BaseController
     {
@@ -17,7 +24,7 @@ namespace server.Areas.Staff.Controllers
         
         public IActionResult Index()
         {
-            Console.WriteLine(this_user.Role);
+            
 			if (this_user == null)
 			{
 				return Redirect("/");
@@ -27,7 +34,15 @@ namespace server.Areas.Staff.Controllers
 				return Redirect("/");
 			}
 			ViewData["User"] = this_user;
-            return View();
+
+
+            var chartData = new ChartData
+            {
+                Labels = new[] { "Label 1", "Label 2", "Label 3" },
+                Data = new[] { 10, 20, 30 }
+            };
+
+            return View(chartData);
         }
     }
 }
