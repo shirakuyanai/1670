@@ -21,6 +21,34 @@ namespace server.Controllers
             _emailSender = emailSender;
         }
 
+        public List<Product> BestSeller()
+        {
+            List<Order_detail> orderDetailsList = _context.Order_detail.ToList();
+            var sortedList = orderDetailsList
+                .GroupBy(o => o.Pid)
+                .OrderByDescending(g => g.Count())
+                .SelectMany(g => g)
+                .ToList();
+            
+            List<Product> products = new List<Product>();
+            
+            foreach (var item in sortedList)
+            {
+                Product product = _context.Product.SingleOrDefault(p => p.Pid == item.Pid);
+                
+                if (product != null)
+                {
+                    if (!products.Contains(product))
+                    {
+                        products.Add(product);
+                    }
+                }
+            }
+            
+            return products;
+        }
+
+
         public IActionResult Index()
         {
             ViewData["User"] = this_user;
@@ -30,6 +58,10 @@ namespace server.Controllers
             var brands = _context.Brand.ToList();
             ViewData["Brands"] = brands;
             ViewData["CartItems"] = GetCartItems();
+
+            List<Product> bestseller = BestSeller();
+            ViewData["BestSeller"] = bestseller;
+            
             return View();
         }
 
@@ -62,6 +94,10 @@ namespace server.Controllers
             }
             return cart;
         }
+
+        
+
+
 
         // GET: Home/Search
         public async Task<IActionResult> Search(string SearchProduct)
