@@ -61,8 +61,14 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="search-bg">
-                            <input type="text" class="form-control" placeholder="Search Here"/>
-                            <button type="Submit"><i class="fa fa-search"></i></button>
+                            <form asp-controller="Home" asp-action="Search" method="get" class="form-inline">
+                                <div class="form-group">
+                                    <input name="SearchProduct" required id="inputSearchAuto" class="input-search form-control form-control-sidebar rounded-pill bg-light border-0" maxlength="40" autocomplete="off" type="text" size="20" placeholder="Bạn cần tìm gì?" style="flex: 1 1 auto;">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-12">
@@ -108,7 +114,9 @@
                                             {
                                                 @foreach (var brand in brands)
                                                 {
-                                                    <li><a href="#">@brand.Title</a></li>
+                                                    <li>
+                                                        <a asp-area="" asp-controller="Home" asp-action="SideMenuBar" asp-route-Bid="@brand.Bid" method="get" )">@brand.Title</a>
+                                                    </li>
                                                 }
                                             }
 
