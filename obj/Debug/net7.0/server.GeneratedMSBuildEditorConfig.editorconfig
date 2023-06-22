@@ -9,245 +9,233 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = server
 build_property.RootNamespace = server
-build_property.ProjectDir = /Volumes/Data/University/1670 copy/
+build_property.ProjectDir = D:\1670-Application dev\Code-asm\Code-demo\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Volumes/Data/University/1670 copy
+build_property.MSBuildProjectDirectory = D:\1670-Application dev\Code-asm\Code-demo
 build_property._RazorSourceGeneratorDebug = 
 
-[/Volumes/Data/University/1670 copy/Areas/Manager/Views/Brands/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvTWFuYWdlci9WaWV3cy9CcmFuZHMvRGVsZXRlLmNzaHRtbA==
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Manager/Views/Brands/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xCcmFuZHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Manager/Views/Brands/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvTWFuYWdlci9WaWV3cy9CcmFuZHMvRGV0YWlscy5jc2h0bWw=
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Manager/Views/Brands/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xCcmFuZHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Manager/Views/Brands/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvTWFuYWdlci9WaWV3cy9CcmFuZHMvRWRpdC5jc2h0bWw=
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Manager/Views/Brands/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xCcmFuZHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Manager/Views/Brands/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvTWFuYWdlci9WaWV3cy9CcmFuZHMvSW5kZXguY3NodG1s
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Manager/Views/Brands/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xCcmFuZHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Manager/Views/Manager/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvTWFuYWdlci9WaWV3cy9NYW5hZ2VyL0luZGV4LmNzaHRtbA==
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Manager/Views/Manager/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xNYW5hZ2VyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Manager/Views/Products/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvTWFuYWdlci9WaWV3cy9Qcm9kdWN0cy9EZWxldGUuY3NodG1s
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Manager/Views/Products/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xQcm9kdWN0c1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Manager/Views/Products/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvTWFuYWdlci9WaWV3cy9Qcm9kdWN0cy9EZXRhaWxzLmNzaHRtbA==
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Manager/Views/Products/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xQcm9kdWN0c1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Manager/Views/Products/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvTWFuYWdlci9WaWV3cy9Qcm9kdWN0cy9FZGl0LmNzaHRtbA==
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Manager/Views/Products/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xQcm9kdWN0c1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Manager/Views/Products/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvTWFuYWdlci9WaWV3cy9Qcm9kdWN0cy9JbmRleC5jc2h0bWw=
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Manager/Views/Products/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xQcm9kdWN0c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Manager/Views/Users/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvTWFuYWdlci9WaWV3cy9Vc2Vycy9DcmVhdGUuY3NodG1s
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Manager/Views/Users/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xVc2Vyc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Manager/Views/Users/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvTWFuYWdlci9WaWV3cy9Vc2Vycy9EZXRhaWxzLmNzaHRtbA==
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Manager/Views/Users/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xVc2Vyc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Manager/Views/Users/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvTWFuYWdlci9WaWV3cy9Vc2Vycy9FZGl0LmNzaHRtbA==
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Manager/Views/Users/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xVc2Vyc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Manager/Views/Users/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvTWFuYWdlci9WaWV3cy9Vc2Vycy9JbmRleC5jc2h0bWw=
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Manager/Views/Users/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xVc2Vyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Manager/Views/Users/Search.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvTWFuYWdlci9WaWV3cy9Vc2Vycy9TZWFyY2guY3NodG1s
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Manager/Views/Users/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xVc2Vyc1xTZWFyY2guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Manager/Views/Users/Sort.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvTWFuYWdlci9WaWV3cy9Vc2Vycy9Tb3J0LmNzaHRtbA==
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Manager/Views/Users/Sort.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xVc2Vyc1xTb3J0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Manager/Views/Users/Suspend.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvTWFuYWdlci9WaWV3cy9Vc2Vycy9TdXNwZW5kLmNzaHRtbA==
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Manager/Views/Users/Suspend.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xVc2Vyc1xTdXNwZW5kLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Brands/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvQnJhbmRzL0NyZWF0ZS5jc2h0bWw=
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Staff/Views/Brands/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3RhZmZcVmlld3NcQnJhbmRzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Brands/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvQnJhbmRzL0VkaXQuY3NodG1s
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Staff/Views/Brands/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3RhZmZcVmlld3NcQnJhbmRzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Brands/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvQnJhbmRzL0luZGV4LmNzaHRtbA==
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Staff/Views/Brands/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3RhZmZcVmlld3NcQnJhbmRzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Orders/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvT3JkZXJzL0NyZWF0ZS5jc2h0bWw=
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Staff/Views/Orders/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3RhZmZcVmlld3NcT3JkZXJzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Orders/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvT3JkZXJzL0RlbGV0ZS5jc2h0bWw=
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Staff/Views/Orders/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3RhZmZcVmlld3NcT3JkZXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Orders/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvT3JkZXJzL0RldGFpbHMuY3NodG1s
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Staff/Views/Products/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3RhZmZcVmlld3NcUHJvZHVjdHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Orders/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvT3JkZXJzL0VkaXQuY3NodG1s
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Staff/Views/Products/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3RhZmZcVmlld3NcUHJvZHVjdHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Orders/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvT3JkZXJzL0luZGV4LmNzaHRtbA==
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Staff/Views/Products/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3RhZmZcVmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Products/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvUHJvZHVjdHMvQ3JlYXRlLmNzaHRtbA==
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Staff/Views/Staff/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3RhZmZcVmlld3NcU3RhZmZcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Products/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvUHJvZHVjdHMvRWRpdC5jc2h0bWw=
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Addresses/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc2VzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Products/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvUHJvZHVjdHMvSW5kZXguY3NodG1s
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Addresses/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc2VzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Staff/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvU3RhZmYvSW5kZXguY3NodG1s
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Addresses/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc2VzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Addresses/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRkcmVzc2VzL0NyZWF0ZS5jc2h0bWw=
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Addresses/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc2VzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Addresses/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRkcmVzc2VzL0RlbGV0ZS5jc2h0bWw=
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Addresses/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc2VzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Addresses/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRkcmVzc2VzL0RldGFpbHMuY3NodG1s
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Cart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Addresses/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRkcmVzc2VzL0VkaXQuY3NodG1s
+[D:/1670-Application dev/Code-asm/Code-demo/Views/CheckOut/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tPdXRcaW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Addresses/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRkcmVzc2VzL0luZGV4LmNzaHRtbA==
+[D:/1670-Application dev/Code-asm/Code-demo/Views/CheckOut/Summary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tPdXRcU3VtbWFyeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Cart/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2FydC9JbmRleC5jc2h0bWw=
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/CheckOut/index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2hlY2tPdXQvaW5kZXguY3NodG1s
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/CheckOut/Summary.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2hlY2tPdXQvU3VtbWFyeS5jc2h0bWw=
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Home/Product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Home/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZWFyY2guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Home/SideMenuBar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaWRlTWVudUJhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Home/Product.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcm9kdWN0LmNzaHRtbA==
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Login/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5caW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Home/Search.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9TZWFyY2guY3NodG1s
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Register/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJcaW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Home/SideMenuBar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9TaWRlTWVudUJhci5jc2h0bWw=
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Register/VerifyUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJcVmVyaWZ5VXNlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Login/index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9naW4vaW5kZXguY3NodG1s
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Shared/CheckoutLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENoZWNrb3V0TGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Register/index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVnaXN0ZXIvaW5kZXguY3NodG1s
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Shared/Components/CartIcon/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2FydEljb25cRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Register/VerifyUser.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVnaXN0ZXIvVmVyaWZ5VXNlci5jc2h0bWw=
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Shared/CheckoutLayout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NoZWNrb3V0TGF5b3V0LmNzaHRtbA==
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Shared/_NotificationPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ob3RpZmljYXRpb25QYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Shared/Components/CartIcon/Default.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvQ2FydEljb24vRGVmYXVsdC5jc2h0bWw=
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Users/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Shared/_NotificationPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Ob3RpZmljYXRpb25QYXJ0aWFsLmNzaHRtbA==
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Users/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Users/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Users/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvQ3JlYXRlLmNzaHRtbA==
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Users/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Users/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvRGVsZXRlLmNzaHRtbA==
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Users/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Users/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvRGV0YWlscy5jc2h0bWw=
+[D:/1670-Application dev/Code-asm/Code-demo/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Users/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvRWRpdC5jc2h0bWw=
+[D:/1670-Application dev/Code-asm/Code-demo/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Data/University/1670 copy/Views/Users/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Manager/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xTaGFyZWRcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-e4ayqstjqf
 
-[/Volumes/Data/University/1670 copy/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
+[D:/1670-Application dev/Code-asm/Code-demo/Areas/Staff/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3RhZmZcVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-2l9zk3g2kx
 
-[/Volumes/Data/University/1670 copy/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Volumes/Data/University/1670 copy/Areas/Manager/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvTWFuYWdlci9WaWV3cy9TaGFyZWQvX0xheW91dC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = b-onrqusmz73
-
-[/Volumes/Data/University/1670 copy/Areas/Staff/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvU3RhZmYvVmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-99r0gjkcir
-
-[/Volumes/Data/University/1670 copy/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-0qbc12us04
+[D:/1670-Application dev/Code-asm/Code-demo/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-1xixji3jxu

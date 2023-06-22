@@ -6,7 +6,7 @@
 	var user = ViewData["User"];
 }
 
-<h1>Order Management</h1>
+<h1>Index</h1>
 
 <p>
 	<a asp-action="Create">Create New</a>
@@ -15,10 +15,7 @@
 	<thead>
 		<tr>
 			<th>
-				First Name
-			</th>
-			<th>
-				Last Name
+				@Html.DisplayNameFor(model => model.User)
 			</th>
 			<th>
 				@Html.DisplayNameFor(model => model.Address)
@@ -43,13 +40,10 @@
 		{
 			<tr>
 				<td>
-					@Html.DisplayFor(modelItem => item.User.FirstName)
+					@Html.DisplayFor(modelItem => item.User.Email)
 				</td>
 				<td>
-					@Html.DisplayFor(modelItem => item.User.LastName)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Address.Address_id)
+					@Html.DisplayFor(modelItem => item.Address.Ward), @Html.DisplayFor(modelItem => item.Address.Town), @Html.DisplayFor(modelItem => item.Address.District),  @Html.DisplayFor(modelItem => item.Address.City)
 				</td>
 				<td>
 					@Html.DisplayFor(modelItem => item.Created_at)
@@ -64,7 +58,7 @@
 					@Html.DisplayFor(modelItem => item.Total)
 				</td>
 				<td>
-					<a asp-action="Edit" asp-route-id="@item.Order_id"><button type="button" class="btn btn-success">Edit status</button></a>
+					<a asp-action="Edit" asp-route-id="@item.Order_id">Edit Status</a>
 				</td>
 			</tr>
 		}
