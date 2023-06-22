@@ -27,7 +27,12 @@ namespace server.Models
         Order_id = Guid.NewGuid().ToString();
         Created_at = DateTime.Now;
         Updated_at = DateTime.MinValue;
-        Status = 0;
+        Status = 1;
+        // 1: Pendding
+        // 2: Processing
+        // 3: Shipped
+        // 4: Delivered
+        // 0: Canceled
         Total = 0;
     }
         

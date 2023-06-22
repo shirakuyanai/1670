@@ -4,6 +4,7 @@
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Staff/Views/Shared/_Layout.cshtml";
     var user = ViewData["User"];
+    var orders = ViewData["Orders"] as List<Order>;
 }
 
 <section class="content">
@@ -142,7 +143,7 @@
                                 <thead>
                                     <tr>
                                         <th>Order ID</th>
-                                        <th>Item</th>
+                                        <th>Total</th>
                                         <th>Status</th>
                                     </tr>
                                 </thead>
@@ -162,11 +163,16 @@
                                             </td>
                                         </tr>
                                     }*@
-                                    <tr>
-                                        <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                                        <td>Call of Duty IV</td>
-                                        <td><span class="badge badge-success">Shipped</span></td>
-                                    </tr>
+                                    @if (orders.Count > 0){
+                                        @foreach (Order order in orders){
+                                            <tr>
+                                                <td><a href="#">@order.Order_id</a></td>
+                                                <td>$@order.Total</td>
+                                                <td><span class="badge badge-warning">Pending</span></td>
+                                            </tr>
+                                        }
+                                    }
+                                    
                                     
                                 </tbody>
                             </table>

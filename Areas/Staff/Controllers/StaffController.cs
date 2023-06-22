@@ -35,6 +35,9 @@ namespace server.Areas.Staff.Controllers
 			}
 			ViewData["User"] = this_user;
 
+            var orders = _context.Order.Where(o => o.Status == 1).ToList();
+
+            ViewData["Orders"] = orders;
 
             var chartData = new ChartData
             {
